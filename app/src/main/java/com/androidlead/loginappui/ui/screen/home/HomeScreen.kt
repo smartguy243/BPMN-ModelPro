@@ -29,7 +29,7 @@ import nl.dionsegijn.konfetti.compose.KonfettiView
 @Composable
 fun HomeScreen(
     modifier: Modifier = Modifier,
-    onRestartFlowClicked: () -> Unit
+    onOpenMenuClicked: () -> Unit
 ) {
     Column(
         modifier = modifier
@@ -52,8 +52,8 @@ fun HomeScreen(
         )
         ActionButton(
             text = "Press to restart",
-            isNavigationArrowVisible = false,
-            onClicked = onRestartFlowClicked,
+            isNavigationArrowVisible = true,
+            onClicked = onOpenMenuClicked,
             colors = ButtonDefaults.buttonColors(
                 containerColor = PrimaryGreenDark,
                 contentColor = Color.White

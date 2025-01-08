@@ -47,17 +47,17 @@ fun WelcomeScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
-            painter = painterResource(R.drawable.img_welcome),
+            painter = painterResource(R.drawable.img_home),
             contentDescription = null,
             modifier = Modifier
-                .size(300.dp)
-                .padding(top = 32.dp)
+                .size(325.dp)
+                .padding(end = 25.dp)
         )
         Spacer(
-            modifier = Modifier.height(24.dp)
+            modifier = Modifier.height(0.dp)
         )
         Text(
-            text = "Let's start codding!",
+            text = "BPMN ModelPro",
             style = MaterialTheme.typography.headlineLarge,
             fontWeight = FontWeight.Black,
             modifier = Modifier.padding(horizontal = 24.dp),
@@ -67,7 +67,7 @@ fun WelcomeScreen(
             modifier = Modifier.height(16.dp)
         )
         Text(
-            text = "Create a beautiful Login App using\nKotlin, Jetpack Compose, and Material3",
+            text = "Your mobile companion for excellence.\nBPMN modeling, anytime, anywhere.",
             modifier = Modifier.padding(horizontal = 24.dp),
             textAlign = TextAlign.Center,
             style = MaterialTheme.typography.bodyLarge,
@@ -77,7 +77,7 @@ fun WelcomeScreen(
             modifier = Modifier.weight(weight = 1f)
         )
         ActionButton(
-            text = "Next",
+            text = "Start",
             isNavigationArrowVisible = true,
             onClicked = onOpenLoginClicked,
             colors = ButtonDefaults.buttonColors(

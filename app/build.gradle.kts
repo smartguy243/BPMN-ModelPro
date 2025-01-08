@@ -55,4 +55,6 @@ dependencies {
     implementation(platform(libs.compose.bom))
     debugImplementation(libs.compose.tooling)
     implementation(libs.bundles.ui)
+    implementation(libs.androidx.webkit)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 }

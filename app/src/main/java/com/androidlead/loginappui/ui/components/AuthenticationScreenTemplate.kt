@@ -102,7 +102,7 @@ fun AuthenticationScreenTemplate(
         )
         InputField(
             leadingIconRes = R.drawable.ic_person,
-            placeholderText = "You email",
+            placeholderText = "Your email",
             modifier = Modifier.padding(horizontal = 24.dp)
         )
         Spacer(
