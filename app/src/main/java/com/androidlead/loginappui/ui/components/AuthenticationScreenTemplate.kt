@@ -268,7 +268,7 @@ private fun Message(
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Center,
             style = MaterialTheme.typography.bodyLarge,
-            color = Color.White,
+            color = DarkTextColor,
             fontWeight = FontWeight.Medium
         )
         Text(
@@ -276,7 +276,7 @@ private fun Message(
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Center,
             style = MaterialTheme.typography.headlineMedium,
-            color = Color.White,
+            color = DarkTextColor,
             fontWeight = FontWeight.Black
         )
     }
@@ -299,7 +299,7 @@ fun InputField(
         onValueChange = { inputValue = it },
         visualTransformation = visualTransformation,
         singleLine = true,
-        shape = RoundedCornerShape(percent = 30),
+        shape = RoundedCornerShape(percent = 25),
         colors = TextFieldDefaults.colors(
             focusedIndicatorColor = Color.Transparent,
             disabledIndicatorColor = Color.Transparent,

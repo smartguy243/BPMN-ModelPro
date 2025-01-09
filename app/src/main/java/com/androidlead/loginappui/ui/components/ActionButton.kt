@@ -33,7 +33,6 @@ fun ActionButton(
     onClicked: () -> Unit,
     colors: ButtonColors,
     shadowColor: Color,
-    isEnabled: Boolean = false
 ) {
     Button(
         modifier = modifier
@@ -46,7 +45,6 @@ fun ActionButton(
             ),
         onClick = onClicked,
         colors = colors,
-        enabled = isEnabled
     ) {
         Row(
             horizontalArrangement = Arrangement.spacedBy(8.dp),

@@ -16,17 +16,23 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.androidlead.loginappui.R
 import com.androidlead.loginappui.ui.components.ActionButton
+import com.androidlead.loginappui.ui.theme.CoralPink
 import com.androidlead.loginappui.ui.theme.DarkTextColor
+import com.androidlead.loginappui.ui.theme.LightLavender
+import com.androidlead.loginappui.ui.theme.MintCream
 import com.androidlead.loginappui.ui.theme.PrimaryPinkBlended
 import com.androidlead.loginappui.ui.theme.PrimaryYellow
 import com.androidlead.loginappui.ui.theme.PrimaryYellowDark
 import com.androidlead.loginappui.ui.theme.PrimaryYellowLight
+import com.androidlead.loginappui.ui.theme.SoftBlue
+import com.androidlead.loginappui.ui.theme.SteelBlue
 
 @Composable
 fun WelcomeScreen(
@@ -38,9 +44,9 @@ fun WelcomeScreen(
             .fillMaxSize()
             .background(
                 Brush.verticalGradient(
-                    0f to PrimaryPinkBlended,
-                    0.6f to PrimaryYellowLight,
-                    1f to PrimaryYellow
+                    0f to LightLavender,
+                    0.5f to MintCream,
+                    1.3f to SoftBlue
                 )
             )
             .systemBarsPadding(),
@@ -81,11 +87,11 @@ fun WelcomeScreen(
             isNavigationArrowVisible = true,
             onClicked = onOpenLoginClicked,
             colors = ButtonDefaults.buttonColors(
-                containerColor = PrimaryYellowDark,
+                containerColor = SteelBlue,
                 contentColor = DarkTextColor
             ),
-            shadowColor = PrimaryYellowDark,
-            modifier = Modifier.padding(24.dp)
+            shadowColor = Color.Black,
+            modifier = Modifier.padding(horizontal = 85.dp, vertical = 60.dp)
         )
     }
 }

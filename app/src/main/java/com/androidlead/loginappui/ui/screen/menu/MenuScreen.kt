@@ -33,13 +33,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.androidlead.loginappui.R
 import com.androidlead.loginappui.ui.components.ActionButton
+import com.androidlead.loginappui.ui.theme.CharcoalGray
+import com.androidlead.loginappui.ui.theme.CreamyPeach
 import com.androidlead.loginappui.ui.theme.DarkTextColor
+import com.androidlead.loginappui.ui.theme.LightLavender
+import com.androidlead.loginappui.ui.theme.MintCream
 import com.androidlead.loginappui.ui.theme.PrimaryGreen
 import com.androidlead.loginappui.ui.theme.PrimaryPinkBlended
 import com.androidlead.loginappui.ui.theme.PrimaryVioletLight
 import com.androidlead.loginappui.ui.theme.PrimaryYellow
 import com.androidlead.loginappui.ui.theme.PrimaryYellowDark
 import com.androidlead.loginappui.ui.theme.PrimaryYellowLight
+import com.androidlead.loginappui.ui.theme.SoftBlue
+import com.androidlead.loginappui.ui.theme.WarmBeige
 
 @Composable
 fun MenuScreen(onHomeClicked: () -> Unit,
@@ -53,9 +59,9 @@ fun MenuScreen(onHomeClicked: () -> Unit,
             .fillMaxSize()
             .background(
                 Brush.verticalGradient(
-                    0f to PrimaryPinkBlended,
-                    0.6f to PrimaryYellowLight,
-                    1f to PrimaryYellow
+                    0f to LightLavender,
+                    0.5f to MintCream,
+                    1.3f to SoftBlue
                 )
             )
             .systemBarsPadding(),
@@ -100,7 +106,8 @@ fun MenuScreen(onHomeClicked: () -> Unit,
 
         Text(text ="Design smarter processes from your pocket.",
             modifier = Modifier.fillMaxWidth(),
-            textAlign = TextAlign.Center)
+            textAlign = TextAlign.Center,
+            color = CharcoalGray)
 
         Spacer(modifier = Modifier.height(30.dp))
 
@@ -111,7 +118,7 @@ fun MenuScreen(onHomeClicked: () -> Unit,
             Card(modifier = Modifier.size(115.dp)
                 .clickable { },
                 colors = CardDefaults
-                    .cardColors(containerColor = Color.White.copy(alpha = 0.8f)),
+                    .cardColors(containerColor = Color.White),
                 shape = RoundedCornerShape(30.dp),
                 elevation = CardDefaults.cardElevation(
                     defaultElevation = 120.dp)) {
@@ -142,7 +149,7 @@ fun MenuScreen(onHomeClicked: () -> Unit,
             Card(modifier = Modifier.size(115.dp)
                 .clickable { },
                 colors = CardDefaults
-                    .cardColors(containerColor = Color.LightGray.copy(alpha = 0.5f)),
+                    .cardColors(containerColor = MintCream),
                 shape = RoundedCornerShape(30.dp),
                 elevation = CardDefaults.cardElevation(
                     defaultElevation = 120.dp)) {
@@ -175,7 +182,7 @@ fun MenuScreen(onHomeClicked: () -> Unit,
             Card(modifier = Modifier.size(115.dp)
                 .clickable { },
                 colors = CardDefaults
-                    .cardColors(containerColor = Color.White.copy(alpha = 0.8f)),
+                    .cardColors(containerColor = Color.White.copy(alpha = 0.9f)),
                 shape = RoundedCornerShape(30.dp),
                 elevation = CardDefaults.cardElevation(
                     defaultElevation = 120.dp)) {
@@ -215,7 +222,7 @@ fun MenuScreen(onHomeClicked: () -> Unit,
                 modifier = Modifier.size(115.dp)
                     .clickable { },
                 colors = CardDefaults
-                    .cardColors(containerColor = Color.LightGray.copy(alpha = 0.5f)),
+                    .cardColors(containerColor = MintCream),
                 shape = RoundedCornerShape(30.dp),
                 elevation = CardDefaults.cardElevation(
                     defaultElevation = 120.dp
@@ -251,7 +258,7 @@ fun MenuScreen(onHomeClicked: () -> Unit,
                 modifier = Modifier.size(115.dp)
                     .clickable { },
                 colors = CardDefaults
-                    .cardColors(containerColor = Color.White.copy(alpha = 0.8f)),
+                    .cardColors(containerColor = Color.White.copy(alpha = 0.9f)),
                 shape = RoundedCornerShape(30.dp),
                 elevation = CardDefaults.cardElevation(
                     defaultElevation = 120.dp
@@ -286,7 +293,7 @@ fun MenuScreen(onHomeClicked: () -> Unit,
                 modifier = Modifier.size(115.dp)
                     .clickable { },
                 colors = CardDefaults
-                    .cardColors(containerColor = Color.LightGray.copy(alpha = 0.5f)),
+                    .cardColors(containerColor = MintCream),
                 shape = RoundedCornerShape(30.dp),
                 elevation = CardDefaults.cardElevation(
                     defaultElevation = 120.dp

@@ -41,16 +41,21 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.androidlead.loginappui.R
 import com.androidlead.loginappui.ui.components.ActionButton
 import com.androidlead.loginappui.ui.components.InputField
 import com.androidlead.loginappui.ui.theme.DarkTextColor
+import com.androidlead.loginappui.ui.theme.LightLavender
+import com.androidlead.loginappui.ui.theme.MintCream
 import com.androidlead.loginappui.ui.theme.PrimaryPinkBlended
 import com.androidlead.loginappui.ui.theme.PrimaryYellow
 import com.androidlead.loginappui.ui.theme.PrimaryYellowDark
 import com.androidlead.loginappui.ui.theme.PrimaryYellowLight
+import com.androidlead.loginappui.ui.theme.SoftBlue
+import com.androidlead.loginappui.ui.theme.WarmBeige
 
 @Composable
 fun SettingsScreen(onSettingsClicked: () -> Unit,
@@ -68,9 +73,9 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                 .padding(innerPadding)
                 .background(
                     Brush.verticalGradient(
-                        0f to PrimaryPinkBlended,
-                        0.6f to PrimaryYellowLight,
-                        1f to PrimaryYellow
+                        0f to LightLavender,
+                        0.5f to MintCream,
+                        1.3f to SoftBlue
                     )
                 )
                 .systemBarsPadding(),
@@ -235,7 +240,7 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                             .padding(bottom = 10.dp)
                     )
 
-                    Divider(thickness = 1.dp)
+                    HorizontalDivider(thickness = 1.dp)
 
                     Row(
                         modifier = Modifier
@@ -270,28 +275,6 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                         )
 
                     }
-                }
-            }
-
-// Second Column
-
-            Spacer(
-                modifier = Modifier
-                    .padding(bottom = 30.dp)
-            )
-
-            Card(
-                elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
-                modifier = Modifier
-                    .padding(start = 20.dp, end = 20.dp),
-                colors = CardDefaults.cardColors(Color.White)
-            ) {
-
-                Column(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(start = 20.dp, end = 20.dp, bottom = 9.dp)
-                ) {
                     Row(
                         modifier = Modifier
                             .padding(top = 8.dp, end = 5.dp),
@@ -487,9 +470,15 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                                 .padding(top = 6.dp, start = 61.dp)
                         )
                     }
-
                 }
             }
+
+// Second Column
+
+            Spacer(
+                modifier = Modifier
+                    .padding(bottom = 30.dp)
+            )
 
 // Third Column
 
@@ -610,10 +599,10 @@ fun TopAppBarCompose() {
         Text(
             text = "Настройки пользователя",
             modifier = Modifier
-                .fillMaxWidth()
-                .padding(start = 119.dp),
+                .fillMaxWidth(),
             fontSize = 18.sp,
-            fontWeight = FontWeight.W600
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center
         )
     })
 }
@@ -621,7 +610,7 @@ fun TopAppBarCompose() {
 @Composable
 fun BottomAppBarCompose(onBuilderClicked: () -> Unit, onLoginClicked: () -> Unit) {
     BottomAppBar(
-        containerColor = DarkTextColor,
+        containerColor = WarmBeige,
         contentColor = Color.Black.copy(alpha = 0.1f)
     ) {
         Spacer(modifier = Modifier.weight(weight = 1f))
@@ -630,7 +619,7 @@ fun BottomAppBarCompose(onBuilderClicked: () -> Unit, onLoginClicked: () -> Unit
             isNavigationArrowVisible = true,
             onClicked = onBuilderClicked,
             colors = ButtonDefaults.buttonColors(
-                containerColor = PrimaryYellowDark,
+                containerColor = LightLavender,
                 contentColor = DarkTextColor
             ),
             shadowColor = PrimaryYellowDark,
@@ -648,7 +637,7 @@ fun BottomAppBarCompose(onBuilderClicked: () -> Unit, onLoginClicked: () -> Unit
             isNavigationArrowVisible = true,
             onClicked = onLoginClicked,
             colors = ButtonDefaults.buttonColors(
-                containerColor = PrimaryYellowDark,
+                containerColor = LightLavender,
                 contentColor = DarkTextColor
             ),
             shadowColor = PrimaryYellowDark,
