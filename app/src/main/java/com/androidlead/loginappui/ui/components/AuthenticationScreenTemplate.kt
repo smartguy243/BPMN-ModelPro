@@ -101,7 +101,7 @@ fun AuthenticationScreenTemplate(
             modifier = Modifier.height(8.dp)
         )
         InputField(
-            leadingIconRes = R.drawable.ic_person,
+            leadingIconRes = R.drawable.profil,
             placeholderText = "Your email",
             modifier = Modifier.padding(horizontal = 24.dp)
         )
@@ -109,7 +109,7 @@ fun AuthenticationScreenTemplate(
             modifier = Modifier.height(10.dp)
         )
         InputField(
-            leadingIconRes = R.drawable.ic_key,
+            leadingIconRes = R.drawable.password2,
             placeholderText = "Password",
             visualTransformation = PasswordVisualTransformation(),
             modifier = Modifier.padding(horizontal = 24.dp)
@@ -190,7 +190,7 @@ private fun InputField(
         onValueChange = { inputValue = it },
         visualTransformation = visualTransformation,
         singleLine = true,
-        shape = RoundedCornerShape(percent = 50),
+        shape = RoundedCornerShape(percent = 30),
         colors = TextFieldDefaults.colors(
             focusedIndicatorColor = Color.Transparent,
             disabledIndicatorColor = Color.Transparent,

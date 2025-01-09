@@ -1,5 +1,11 @@
 [versions]
+activity-compose = "1.9.3"
 agp = "8.7.3"
+compose-bom-version = "2024.12.01"
+core-ktx = "1.15.0"
+espresso-core = "3.6.1"
+junit = "4.13.2"
+junit-version = "1.2.1"
 kotlin = "1.9.0"
 androidx-core = "1.13.1"
 androidx-runtime = "2.8.4"
@@ -7,15 +13,32 @@ compose-activity = "1.9.1"
 compose-bom = "2024.06.00"
 compose-navigation = "2.7.7"
 konfetti = "2.0.4"
+lifecycle-runtime-ktx = "2.8.7"
 lifecycle-viewmodel-compose = "2.8.7"
+navigation-compose = "2.8.5"
+pulltorefresh = "0.2.0"
 webkit = "1.12.1"
 
 [libraries]
+androidx-activity-compose-v193 = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
+androidx-compose-bom-v20241201 = { module = "androidx.compose:compose-bom", version.ref = "compose-bom-version" }
+androidx-compose-material3-material3 = { module = "androidx.compose.material3:material3" }
 androidx-core = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core" }
+androidx-core-ktx-v1150 = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
+androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso-core" }
+androidx-junit = { module = "androidx.test.ext:junit", version.ref = "junit-version" }
 androidx-lifecycle = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidx-runtime" }
+androidx-lifecycle-runtime-ktx-v287 = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
 androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle-viewmodel-compose" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 
+androidx-navigation-compose-v285 = { module = "androidx.navigation:navigation-compose", version.ref = "navigation-compose" }
+androidx-ui = { module = "androidx.compose.ui:ui" }
+androidx-ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
+androidx-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
+androidx-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+androidx-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
+androidx-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
 androidx-webkit = { module = "androidx.webkit:webkit", version.ref = "webkit" }
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
 compose-ui = { group = "androidx.compose.ui", name = "ui" }
@@ -25,7 +48,16 @@ compose-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-pr
 compose-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "compose-activity" }
 compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "compose-navigation" }
 
+junit = { module = "junit:junit", version.ref = "junit" }
 konfetti = { group = "nl.dionsegijn", name = "konfetti-compose", version.ref = "konfetti" }
+material3 = { module = "androidx.compose.material3:material3" }
+pulltorefresh = { module = "com.github.fengdai.compose:pulltorefresh", version.ref = "pulltorefresh" }
+ui = { module = "androidx.compose.ui:ui" }
+ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
+ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
+ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
+ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
 
 [bundles]
 androidX = ["androidx-core", "androidx-lifecycle"]

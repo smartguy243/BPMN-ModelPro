@@ -51,7 +51,7 @@ fun HomeScreen(
             modifier = Modifier.weight(weight = 1f)
         )
         ActionButton(
-            text = "Press to restart",
+            text = "Press to start",
             isNavigationArrowVisible = true,
             onClicked = onOpenMenuClicked,
             colors = ButtonDefaults.buttonColors(

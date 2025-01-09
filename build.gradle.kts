@@ -2,4 +2,7 @@
 plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.jetbrains.kotlin.android) apply false
+
+    id("com.android.library") version "8.7.3" apply false
+    id("com.vanniktech.maven.publish") version "0.25.3" apply false
 }

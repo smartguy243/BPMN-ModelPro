@@ -31,12 +31,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavDestination
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.rememberNavController
 import com.androidlead.loginappui.R
 import com.androidlead.loginappui.ui.components.ActionButton
-import com.androidlead.loginappui.ui.screen.container.NavGraph
 import com.androidlead.loginappui.ui.theme.DarkTextColor
 import com.androidlead.loginappui.ui.theme.PrimaryPinkBlended
 import com.androidlead.loginappui.ui.theme.PrimaryYellow
@@ -44,8 +40,10 @@ import com.androidlead.loginappui.ui.theme.PrimaryYellowDark
 import com.androidlead.loginappui.ui.theme.PrimaryYellowLight
 
 @Composable
-fun MenuScreen(
-               onLoginClicked: () -> Unit){
+fun MenuScreen(onHomeClicked: () -> Unit,
+               onLoginClicked: () -> Unit,
+               onBuilderClicked: () -> Unit,
+               onSettingsClicked: () -> Unit){
 
     Column(
         modifier = Modifier
@@ -70,7 +68,7 @@ fun MenuScreen(
             ActionButton(
                 text = "Logout",
                 isNavigationArrowVisible = true,
-                onClicked = onLoginClicked,
+                onClicked = onSettingsClicked,
                 colors = ButtonDefaults.buttonColors(
                     containerColor = PrimaryYellowDark,
                     contentColor = DarkTextColor
