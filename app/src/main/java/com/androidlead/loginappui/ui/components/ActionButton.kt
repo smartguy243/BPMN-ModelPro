@@ -32,7 +32,8 @@ fun ActionButton(
     isNavigationArrowVisible: Boolean,
     onClicked: () -> Unit,
     colors: ButtonColors,
-    shadowColor: Color
+    shadowColor: Color,
+    isEnabled: Boolean = false
 ) {
     Button(
         modifier = modifier
@@ -44,7 +45,8 @@ fun ActionButton(
                 spotColor = shadowColor
             ),
         onClick = onClicked,
-        colors = colors
+        colors = colors,
+        enabled = isEnabled
     ) {
         Row(
             horizontalArrangement = Arrangement.spacedBy(8.dp),

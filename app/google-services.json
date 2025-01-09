@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "167541511869",
+    "project_id": "loginappui-c5c6c",
+    "storage_bucket": "loginappui-c5c6c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:167541511869:android:8fcfd8f89e6ebafab489d4",
+        "android_client_info": {
+          "package_name": "com.androidlead.loginappui"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBYc8gHtNHwWcNugwDxVoCVlRVx7GNZVI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

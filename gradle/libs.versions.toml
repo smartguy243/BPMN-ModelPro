@@ -4,6 +4,7 @@ agp = "8.7.3"
 compose-bom-version = "2024.12.01"
 core-ktx = "1.15.0"
 espresso-core = "3.6.1"
+firebase-bom = "33.7.0"
 junit = "4.13.2"
 junit-version = "1.2.1"
 kotlin = "1.9.0"
@@ -48,6 +49,11 @@ compose-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-pr
 compose-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "compose-activity" }
 compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "compose-navigation" }
 
+firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
+firebase-auth = { module = "com.google.firebase:firebase-auth" }
+firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase-bom" }
+firebase-firestore = { module = "com.google.firebase:firebase-firestore" }
 junit = { module = "junit:junit", version.ref = "junit" }
 konfetti = { group = "nl.dionsegijn", name = "konfetti-compose", version.ref = "konfetti" }
 material3 = { module = "androidx.compose.material3:material3" }

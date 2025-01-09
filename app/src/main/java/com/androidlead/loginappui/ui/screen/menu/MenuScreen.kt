@@ -34,7 +34,9 @@ import androidx.compose.ui.unit.sp
 import com.androidlead.loginappui.R
 import com.androidlead.loginappui.ui.components.ActionButton
 import com.androidlead.loginappui.ui.theme.DarkTextColor
+import com.androidlead.loginappui.ui.theme.PrimaryGreen
 import com.androidlead.loginappui.ui.theme.PrimaryPinkBlended
+import com.androidlead.loginappui.ui.theme.PrimaryVioletLight
 import com.androidlead.loginappui.ui.theme.PrimaryYellow
 import com.androidlead.loginappui.ui.theme.PrimaryYellowDark
 import com.androidlead.loginappui.ui.theme.PrimaryYellowLight
@@ -43,7 +45,8 @@ import com.androidlead.loginappui.ui.theme.PrimaryYellowLight
 fun MenuScreen(onHomeClicked: () -> Unit,
                onLoginClicked: () -> Unit,
                onBuilderClicked: () -> Unit,
-               onSettingsClicked: () -> Unit){
+               onSettingsClicked: () -> Unit,
+               onLearnClicked: () -> Unit){
 
     Column(
         modifier = Modifier
@@ -68,9 +71,9 @@ fun MenuScreen(onHomeClicked: () -> Unit,
             ActionButton(
                 text = "Logout",
                 isNavigationArrowVisible = true,
-                onClicked = onSettingsClicked,
+                onClicked = onLoginClicked,
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = PrimaryYellowDark,
+                    containerColor = PrimaryGreen,
                     contentColor = DarkTextColor
                 ),
                 shadowColor = PrimaryYellowDark,
@@ -83,7 +86,7 @@ fun MenuScreen(onHomeClicked: () -> Unit,
             )
         }
 
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(40.dp))
 
         Text(
             text = "BPMN ModelPro",
@@ -93,88 +96,112 @@ fun MenuScreen(onHomeClicked: () -> Unit,
             color = DarkTextColor
         )
 
-        Spacer(modifier = Modifier.height(15.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         Text(text ="Design smarter processes from your pocket.",
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Center)
 
-        Spacer(modifier = Modifier.height(25.dp))
+        Spacer(modifier = Modifier.height(30.dp))
 
         Row(modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly,
             verticalAlignment = Alignment.CenterVertically) {
 
-            Column(
-                modifier = Modifier
-                    .size(115.dp)
-                    .background(color = Color.LightGray.copy(alpha = 0.3f))
-                    .clickable {},
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
+            Card(modifier = Modifier.size(115.dp)
+                .clickable { },
+                colors = CardDefaults
+                    .cardColors(containerColor = Color.White.copy(alpha = 0.8f)),
+                shape = RoundedCornerShape(30.dp),
+                elevation = CardDefaults.cardElevation(
+                    defaultElevation = 120.dp)) {
+                Column(
+                    modifier = Modifier.fillMaxSize()
+                        .clickable {onBuilderClicked()},
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.bpmn),
+                        contentDescription = "Builder",
+                        modifier = Modifier.size(62.dp)
+                            .padding(top = 15.dp)
+                    )
 
-                Image(
-                    painter = painterResource(id = R.drawable.bpmn),
-                    contentDescription = "Builder",
-                    modifier = Modifier.size(62.dp)
-                        .padding(top = 15.dp)
-                )
+                    Spacer(modifier = Modifier.height(19.dp))
 
-                Spacer(modifier = Modifier.height(19.dp))
-
-                Text(text ="Build Model",
-                    modifier = Modifier.fillMaxWidth(),
-                    fontSize = 14.sp,
-                    textAlign = TextAlign.Center)
+                    Text(
+                        text = "Build Model",
+                        modifier = Modifier.fillMaxWidth(),
+                        fontSize = 14.sp,
+                        textAlign = TextAlign.Center
+                    )
+                }
             }
 
-            Column(
-                modifier = Modifier
-                    .size(115.dp)
-                    .background(Color.LightGray.copy(alpha = 0.3f))
-                    .clickable {},
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
+            Card(modifier = Modifier.size(115.dp)
+                .clickable { },
+                colors = CardDefaults
+                    .cardColors(containerColor = Color.LightGray.copy(alpha = 0.5f)),
+                shape = RoundedCornerShape(30.dp),
+                elevation = CardDefaults.cardElevation(
+                    defaultElevation = 120.dp)) {
+                Column(
+                    modifier = Modifier
+                        .size(115.dp)
+                        .clickable {},
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
 
-                Image(
-                    painter = painterResource(id = R.drawable.loupe),
-                    contentDescription = "Search",
-                    modifier = Modifier.size(50.dp)
-                        .padding(top = 15.dp)
-                )
+                    Image(
+                        painter = painterResource(id = R.drawable.loupe),
+                        contentDescription = "Search",
+                        modifier = Modifier.size(50.dp)
+                            .padding(top = 15.dp)
+                    )
 
-                Spacer(modifier = Modifier.height(30.dp))
+                    Spacer(modifier = Modifier.height(30.dp))
 
-                Text(text ="Search",
-                    modifier = Modifier.fillMaxWidth(),
-                    fontSize = 14.sp,
-                    textAlign = TextAlign.Center)
+                    Text(
+                        text = "Search",
+                        modifier = Modifier.fillMaxWidth(),
+                        fontSize = 14.sp,
+                        textAlign = TextAlign.Center
+                    )
+                }
             }
 
-            Column(
-                modifier = Modifier
-                    .size(115.dp)
-                    .background(Color.LightGray.copy(alpha = 0.3f))
-                    .clickable { },
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
+            Card(modifier = Modifier.size(115.dp)
+                .clickable { },
+                colors = CardDefaults
+                    .cardColors(containerColor = Color.White.copy(alpha = 0.8f)),
+                shape = RoundedCornerShape(30.dp),
+                elevation = CardDefaults.cardElevation(
+                    defaultElevation = 120.dp)) {
+                Column(
+                    modifier = Modifier.fillMaxSize()
+                        .clickable {onBuilderClicked()},
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
 
-                Image(
-                    painter = painterResource(id = R.drawable.pencil),
-                    contentDescription = "Textes surlignés",
-                    modifier = Modifier.size(50.dp)
-                        .padding(top = 15.dp)
-                )
+                    Image(
+                        painter = painterResource(id = R.drawable.pencil),
+                        contentDescription = "Textes surlignés",
+                        modifier = Modifier.size(50.dp)
+                            .padding(top = 15.dp)
+                    )
 
-                Spacer(modifier = Modifier.height(30.dp))
+                    Spacer(modifier = Modifier.height(30.dp))
 
-                Text(text ="Edit Model",
-                    modifier = Modifier.fillMaxWidth(),
-                    fontSize = 14.sp,
-                    textAlign = TextAlign.Center)
+                    Text(
+                        text = "Edit Model",
+                        modifier = Modifier.fillMaxWidth(),
+                        fontSize = 14.sp,
+                        textAlign = TextAlign.Center
+                    )
+                }
             }
         }
 
@@ -184,141 +211,174 @@ fun MenuScreen(onHomeClicked: () -> Unit,
             horizontalArrangement = Arrangement.SpaceEvenly,
             verticalAlignment = Alignment.CenterVertically) {
 
-            Column(
-                modifier = Modifier
-                    .size(115.dp)
-                    .background(Color.LightGray.copy(alpha = 0.3f))
+            Card(
+                modifier = Modifier.size(115.dp)
                     .clickable { },
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-
-                Image(
-                    painter = painterResource(id = R.drawable.view),
-                    contentDescription = "historique",
-                    modifier = Modifier.size(55.dp)
-                        .padding(top = 15.dp)
+                colors = CardDefaults
+                    .cardColors(containerColor = Color.LightGray.copy(alpha = 0.5f)),
+                shape = RoundedCornerShape(30.dp),
+                elevation = CardDefaults.cardElevation(
+                    defaultElevation = 120.dp
                 )
+            ) {
+                Column(
+                    modifier = Modifier
+                        .size(115.dp)
+                        .clickable {onBuilderClicked()},
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
 
-                Spacer(modifier = Modifier.height(25.dp))
+                    Image(
+                        painter = painterResource(id = R.drawable.view),
+                        contentDescription = "historique",
+                        modifier = Modifier.size(55.dp)
+                            .padding(top = 15.dp)
+                    )
 
-                Text(text ="View Model",
-                    modifier = Modifier.fillMaxWidth(),
-                    fontSize = 14.sp,
-                    textAlign = TextAlign.Center)
+                    Spacer(modifier = Modifier.height(25.dp))
+
+                    Text(
+                        text = "View Model",
+                        modifier = Modifier.fillMaxWidth(),
+                        fontSize = 14.sp,
+                        textAlign = TextAlign.Center
+                    )
+                }
             }
 
-            Column(
-                modifier = Modifier
-                    .size(115.dp)
-                    .background(Color.LightGray.copy(alpha = 0.3f))
+            Card(
+                modifier = Modifier.size(115.dp)
                     .clickable { },
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-
-                Image(
-                    painter = painterResource(id = R.drawable.settings),
-                    contentDescription = "Favorites",
-                    modifier = Modifier.size(50.dp)
-                        .padding(top = 15.dp)
+                colors = CardDefaults
+                    .cardColors(containerColor = Color.White.copy(alpha = 0.8f)),
+                shape = RoundedCornerShape(30.dp),
+                elevation = CardDefaults.cardElevation(
+                    defaultElevation = 120.dp
                 )
+            ) {
+                Column(
+                    modifier = Modifier.fillMaxSize()
+                        .clickable {onSettingsClicked()},
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
 
-                Spacer(modifier = Modifier.height(30.dp))
+                    Image(
+                        painter = painterResource(id = R.drawable.settings),
+                        contentDescription = "Favorites",
+                        modifier = Modifier.size(50.dp)
+                            .padding(top = 15.dp)
+                    )
 
-                Text(text ="Settings",
-                    modifier = Modifier.fillMaxWidth(),
-                    fontSize = 14.sp,
-                    textAlign = TextAlign.Center)
+                    Spacer(modifier = Modifier.height(30.dp))
+
+                    Text(
+                        text = "Settings",
+                        modifier = Modifier.fillMaxWidth(),
+                        fontSize = 14.sp,
+                        textAlign = TextAlign.Center
+                    )
+                }
             }
 
-            Column(
-                modifier = Modifier
-                    .size(115.dp)
-                    .background(Color.LightGray.copy(alpha = 0.3f))
+            Card(
+                modifier = Modifier.size(115.dp)
                     .clickable { },
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-
-                Image(
-                    painter = painterResource(id = R.drawable.learn),
-                    contentDescription = "notes",
-                    modifier = Modifier.size(55.dp)
-                        .padding(top = 10.dp)
+                colors = CardDefaults
+                    .cardColors(containerColor = Color.LightGray.copy(alpha = 0.5f)),
+                shape = RoundedCornerShape(30.dp),
+                elevation = CardDefaults.cardElevation(
+                    defaultElevation = 120.dp
                 )
+            ) {
+                Column(
+                    modifier = Modifier
+                        .size(115.dp)
+                        .clickable {},
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
 
-                Spacer(modifier = Modifier.height(25.dp))
+                    Image(
+                        painter = painterResource(id = R.drawable.learn),
+                        contentDescription = "notes",
+                        modifier = Modifier.size(55.dp)
+                            .padding(top = 10.dp)
+                    )
 
-                Text(text ="Learn BPMN",
-                    modifier = Modifier.fillMaxWidth(),
-                    fontSize = 14.sp,
-                    textAlign = TextAlign.Center)
+                    Spacer(modifier = Modifier.height(25.dp))
+
+                    Text(
+                        text = "Learn BPMN",
+                        modifier = Modifier.fillMaxWidth(),
+                        fontSize = 14.sp,
+                        textAlign = TextAlign.Center
+                    )
+                }
             }
         }
 
-        Spacer(modifier = Modifier.height(220.dp))
+        Spacer(modifier = Modifier.height(195.dp))
 
-        Text(text ="La langue n'a pas été sélectionnée   v1.2.0",
+        Text(text ="Actual App version  v1.2.0",
             modifier = Modifier.fillMaxWidth(),
             fontWeight = FontWeight.Bold,
-            textAlign = TextAlign.Center)
+            textAlign = TextAlign.Center,
+            color = DarkTextColor)
 
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         Row(modifier = Modifier
             .padding(horizontal = 110.dp)
             .fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceEvenly,
+            horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
 
             Card(modifier = Modifier.size(40.dp)
-                .background(Color.LightGray),
-                colors = CardDefaults.cardColors(
-                    containerColor = Color.LightGray.copy(alpha = 0.2f)),
-                shape = RoundedCornerShape(0.dp)
-            ) {
+                .clickable { },
+                colors = CardDefaults
+                    .cardColors(containerColor = PrimaryVioletLight),
+                shape = RoundedCornerShape(20.dp),
+                elevation = CardDefaults.cardElevation(
+                    defaultElevation = 15.dp)) {
 
                 Image(
                     painter = painterResource(id = R.drawable.world),
                     contentDescription = "languages",
                     modifier = Modifier.size(30.dp)
-                        .padding(start = 10.dp, top = 10.dp)
-                        .background(Color.LightGray)
-                        .clickable { })
+                        .padding(start = 10.dp, top = 10.dp))
             }
 
             Card(modifier = Modifier.size(40.dp)
-                .background(Color.LightGray),
-                colors = CardDefaults.cardColors(
-                    containerColor = Color.LightGray.copy(alpha = 0.2f)),
-                shape = RoundedCornerShape(0.dp)
-            ) {
+                .clickable { },
+                colors = CardDefaults
+                    .cardColors(containerColor = PrimaryVioletLight),
+                shape = RoundedCornerShape(20.dp),
+                elevation = CardDefaults.cardElevation(
+                    defaultElevation = 15.dp)) {
 
                 Image(
                     painter = painterResource(id = R.drawable.moon),
                     contentDescription = "light",
                     modifier = Modifier.size(30.dp)
-                        .background(Color.LightGray)
-                        .padding(start = 10.dp, top = 10.dp)
-                        .clickable { })
+                        .padding(start = 10.dp, top = 10.dp))
             }
 
             Card(modifier = Modifier.size(40.dp)
-                .background(Color.LightGray),
-                colors = CardDefaults.cardColors(
-                    containerColor = Color.LightGray.copy(alpha = 0.8f)),
-                shape = RoundedCornerShape(0.dp)
-            ) {
+                .clickable { },
+                colors = CardDefaults
+                    .cardColors(containerColor = PrimaryVioletLight),
+                shape = RoundedCornerShape(20.dp),
+                elevation = CardDefaults.cardElevation(
+                    defaultElevation = 15.dp)) {
 
                 Image(
                     painter = painterResource(id = R.drawable.info),
                     contentDescription = "infos",
                     modifier = Modifier.size(30.dp)
-                        .background(Color.LightGray)
                         .padding(start = 10.dp, top = 10.dp)
-                        .clickable { }
                 )
             }
 

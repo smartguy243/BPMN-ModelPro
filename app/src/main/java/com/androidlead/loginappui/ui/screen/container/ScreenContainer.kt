@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-//import com.androidlead.loginappui.ui.screen.builder.BuilderScreen
+import com.androidlead.loginappui.ui.screen.builder.BuilderScreen
 import com.androidlead.loginappui.ui.screen.home.HomeScreen
 import com.androidlead.loginappui.ui.screen.login.LoginScreen
 import com.androidlead.loginappui.ui.screen.menu.MenuScreen
@@ -54,20 +54,6 @@ fun ScreenContainer() {
                 }
             )
         }
-//        composable(NavGraph.Builder.route) {
-//            BuilderScreen(
-//                onBuilderClicked = {
-//                    navHost.navigate(NavGraph.Menu.route)
-//                }
-//            )
-//        }
-        composable(NavGraph.Settings.route) {
-            SettingsScreen(
-                onSettingsClicked = {
-                    navHost.navigate(NavGraph.Menu.route)
-                }
-            )
-        }
         composable(NavGraph.Menu.route) {
             MenuScreen(
                 onSettingsClicked = {
@@ -81,6 +67,29 @@ fun ScreenContainer() {
                 },
                 onHomeClicked = {
                     navHost.navigate(NavGraph.Home.route)
+                },
+                onLearnClicked = {
+                    navHost.navigate(NavGraph.Learn.route)
+                }
+            )
+        }
+        composable(NavGraph.Builder.route) {
+            BuilderScreen(
+                onBuilderClicked = {
+                    navHost.navigate(NavGraph.Menu.route)
+                }
+            )
+        }
+        composable(NavGraph.Settings.route) {
+            SettingsScreen(
+                onSettingsClicked = {
+                    navHost.navigate(NavGraph.Menu.route)
+                },
+                onBuilderClicked = {
+                    navHost.navigate(NavGraph.Menu.route)
+                },
+                onLoginClicked = {
+                    navHost.navigate(NavGraph.Login.route)
                 }
             )
         }

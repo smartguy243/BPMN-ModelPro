@@ -6,6 +6,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.androidlead.loginappui.R
 import com.androidlead.loginappui.ui.components.AuthenticationScreenTemplate
+import com.androidlead.loginappui.ui.components.AuthenticationScreenTemplate2
 import com.androidlead.loginappui.ui.theme.PrimaryViolet
 import com.androidlead.loginappui.ui.theme.PrimaryVioletDark
 import com.androidlead.loginappui.ui.theme.PrimaryVioletLight
@@ -16,7 +17,7 @@ fun RegistrationScreen(
     onRegisterClicked: () -> Unit,
     onLoginClicked: () -> Unit
 ){
-    AuthenticationScreenTemplate(
+    AuthenticationScreenTemplate2(
         modifier = modifier,
         backgroundGradient = arrayOf(
             0f to PrimaryViolet,

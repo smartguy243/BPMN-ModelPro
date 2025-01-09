@@ -7,27 +7,34 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBarsPadding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.BottomAppBar
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SearchBarDefaults.InputField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
@@ -37,16 +44,22 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.androidlead.loginappui.R
-import com.androidlead.loginappui.ui.theme.PrimaryGreen
+import com.androidlead.loginappui.ui.components.ActionButton
+import com.androidlead.loginappui.ui.components.InputField
+import com.androidlead.loginappui.ui.theme.DarkTextColor
 import com.androidlead.loginappui.ui.theme.PrimaryPinkBlended
-import com.androidlead.loginappui.ui.theme.PrimaryViolet
 import com.androidlead.loginappui.ui.theme.PrimaryYellow
+import com.androidlead.loginappui.ui.theme.PrimaryYellowDark
 import com.androidlead.loginappui.ui.theme.PrimaryYellowLight
 
 @Composable
-fun SettingsScreen(onSettingsClicked: () -> Unit) {
+fun SettingsScreen(onSettingsClicked: () -> Unit,
+                   onBuilderClicked: () -> Unit,
+                   onLoginClicked: () -> Unit) {
     Scaffold(topBar = { TopAppBarCompose() },
-        bottomBar = { BottomAppBarCompose() }
+        bottomBar = {
+            BottomAppBarCompose(onBuilderClicked, onLoginClicked)
+        }
     ) { innerPadding ->
 
         Column(
@@ -64,49 +77,12 @@ fun SettingsScreen(onSettingsClicked: () -> Unit) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
-            Text(
-                text = "Réglages",
-                modifier = Modifier
-                    .padding(start = 20.dp),
-                fontSize = 30.sp,
-                fontWeight = FontWeight.W700
+            InputField(
+                leadingIconRes = R.drawable.icon_search,
+                placeholderText = "Поиск",
+                modifier = Modifier.padding(horizontal = 20.dp)
+                                   .height(50.dp)
             )
-            Spacer(
-                modifier = Modifier
-                    .padding(bottom = 5.dp)
-            )
-
-            Card(
-                elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
-                modifier = Modifier
-                    .padding(start = 20.dp, end = 20.dp)
-            ) {
-
-                Column(
-                    modifier = Modifier
-                        .background(Color.White.copy(alpha = 0.3f))
-                        .fillMaxWidth()
-                        .requiredHeight(35.dp)
-                ) {
-
-                    Row {
-                        Image(
-                            modifier = Modifier
-                                .padding(start = 7.dp, top = 7.dp, end = 5.dp),
-                            painter = painterResource(id = R.drawable.icon_search),
-                            contentDescription = "icon_search",
-                            colorFilter = ColorFilter.tint(color = Color.DarkGray.copy(alpha = 0.4f))
-                        )
-                        Text(
-                            modifier = Modifier
-                                .padding(top = 6.dp),
-                            text = "Rechercher",
-                            color = Color.DarkGray.copy(alpha = 0.6f)
-                        )
-                    }
-                }
-
-            }
 
             Spacer(
                 modifier = Modifier
@@ -132,35 +108,29 @@ fun SettingsScreen(onSettingsClicked: () -> Unit) {
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
                         Image(
-                            painter = painterResource(id = R.mipmap.img),
+                            painter = painterResource(id = R.drawable.profil1),
                             contentDescription = "profil",
                             contentScale = ContentScale.Crop,
                             modifier = Modifier
                                 .clip(CircleShape)
-                                .padding(top = 5.dp)
-                                .size(48.dp),
+                                .padding(top = 3.dp)
+                                .size(60.dp),
                             alignment = Alignment.CenterStart
                         )
 
                         Column(verticalArrangement = Arrangement.Center) {
                             Text(
-                                text = "Éraste_Kadiayi",
-                                fontWeight = FontWeight.W500,
+                                text = "Иван Иванович",
+                                fontWeight = FontWeight.Bold,
                                 modifier = Modifier
-                                    .padding(top = 5.dp, start = 12.dp),
-                                fontSize = 20.sp
-                            )
-                            Text(
-                                modifier = Modifier
-                                    .padding(start = 11.dp),
-                                text = "«À tes résolutions répon...",
-                                color = Color.DarkGray.copy(alpha = 0.6f)
+                                    .padding(top = 18.dp, start = 12.dp),
+                                fontSize = 25.sp
                             )
                         }
                         Image(
                             modifier = Modifier
-                                .padding(top = 3.dp)
-                                .size(50.dp),
+                                .padding(start= 70.dp, top = 16.dp)
+                                .size(35.dp),
                             painter = painterResource(id = R.drawable.icon_qr_code_scanner),
                             contentDescription = "icon_scanner",
                             colorFilter = ColorFilter.tint(Color.Blue.copy(alpha = 0.6f)),
@@ -169,7 +139,7 @@ fun SettingsScreen(onSettingsClicked: () -> Unit) {
 
                     }
 
-                    Divider(thickness = 1.dp)
+                    HorizontalDivider(thickness = 1.dp)
 
                     Row(
                         modifier = Modifier
@@ -190,7 +160,7 @@ fun SettingsScreen(onSettingsClicked: () -> Unit) {
                             )
                         }
                         Text(
-                            text = "Avatar",
+                            text = "Управление учётной записью",
                             modifier = Modifier
                                 .padding(start = 15.dp)
                         )
@@ -403,7 +373,7 @@ fun SettingsScreen(onSettingsClicked: () -> Unit) {
                             .padding(bottom = 10.dp)
                     )
 
-                    Divider(thickness = 1.dp)
+                    HorizontalDivider(thickness = 1.dp)
 
                     Row(
                         modifier = Modifier
@@ -443,7 +413,7 @@ fun SettingsScreen(onSettingsClicked: () -> Unit) {
                             .padding(bottom = 10.dp)
                     )
 
-                    Divider(thickness = 1.dp)
+                    HorizontalDivider(thickness = 1.dp)
 
                     Row(
                         modifier = Modifier
@@ -483,7 +453,7 @@ fun SettingsScreen(onSettingsClicked: () -> Unit) {
                             .padding(bottom = 10.dp)
                     )
 
-                    Divider(thickness = 1.dp)
+                    HorizontalDivider(thickness = 1.dp)
 
                     Row(
                         modifier = Modifier
@@ -635,9 +605,10 @@ fun SettingsScreen(onSettingsClicked: () -> Unit) {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TopAppBarCompose() {
-    TopAppBar(title = {
+    TopAppBar(
+        title = {
         Text(
-            text = "Réglages",
+            text = "Настройки пользователя",
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 119.dp),
@@ -648,90 +619,46 @@ fun TopAppBarCompose() {
 }
 
 @Composable
-fun BottomAppBarCompose() {
+fun BottomAppBarCompose(onBuilderClicked: () -> Unit, onLoginClicked: () -> Unit) {
     BottomAppBar(
-        containerColor = Color.White.copy(alpha = 0.988f),
-        contentColor = Color.DarkGray.copy(alpha = 0.1f)
+        containerColor = DarkTextColor,
+        contentColor = Color.Black.copy(alpha = 0.1f)
     ) {
-        Row {}
-        Column {
-            Image(
-                modifier = Modifier
-                    .padding(start = 17.dp),
-                painter = painterResource(id = R.drawable.round_data_saver_off_24),
-                contentDescription = "statut"
-            )
-            Text(
-                modifier = Modifier
-                    .padding(start = 13.dp),
-                text = "Statut",
-                fontSize = 10.sp,
-                color = Color.Gray.copy(alpha = 0.7f)
-            )
-        }
-
-        Column {
-            Image(
-                modifier = Modifier
-                    .padding(start = 40.dp),
-                painter = painterResource(id = R.drawable.appel),
-                contentDescription = "appels"
-            )
-            Text(
-                modifier = Modifier
-                    .padding(start = 35.dp),
-                text = "Appels",
-                fontSize = 10.sp,
-                color = Color.Gray.copy(alpha = 0.7f)
-            )
-        }
-
-        Column {
-            Image(
-                modifier = Modifier
-                    .padding(start = 48.dp),
-                painter = painterResource(id = R.drawable.community),
-                contentDescription = "community"
-            )
-            Text(
-                modifier = Modifier
-                    .padding(start = 25.dp),
-                text = "Communautés",
-                fontSize = 10.sp,
-                color = Color.Gray.copy(alpha = 0.7f)
-            )
-        }
-
-        Column {
-            Image(
-                modifier = Modifier
-                    .padding(start = 33.dp),
-                painter = painterResource(id = R.drawable.chat),
-                contentDescription = "discussions"
-            )
-            Text(
-                modifier = Modifier
-                    .padding(start = 14.dp),
-                text = "Discussions",
-                fontSize = 10.sp,
-                color = Color.Gray.copy(alpha = 0.7f)
-            )
-        }
-
-        Column {
-            Image(
-                modifier = Modifier
-                    .padding(start = 23.dp),
-                painter = painterResource(id = R.drawable.baseline_settings_suggest_24),
-                contentDescription = "settings"
-            )
-            Text(
-                modifier = Modifier
-                    .padding(start = 10.dp),
-                text = "Réglages",
-                fontSize = 10.sp,
-                color = Color.Blue.copy(alpha = 0.7f)
-            )
-        }
+        Spacer(modifier = Modifier.weight(weight = 1f))
+        ActionButton(
+            text = "Go to Menu",
+            isNavigationArrowVisible = true,
+            onClicked = onBuilderClicked,
+            colors = ButtonDefaults.buttonColors(
+                containerColor = PrimaryYellowDark,
+                contentColor = DarkTextColor
+            ),
+            shadowColor = PrimaryYellowDark,
+            modifier = Modifier.padding(end = 15.dp)
+                .height(35.dp)
+                .width(140.dp)
+                .shadow(
+                    elevation = 24.dp,
+                    shape = RoundedCornerShape(percent = 50)
+                )
+        )
+        Spacer(modifier = Modifier.weight(weight = 1f))
+        ActionButton(
+            text = "Logout",
+            isNavigationArrowVisible = true,
+            onClicked = onLoginClicked,
+            colors = ButtonDefaults.buttonColors(
+                containerColor = PrimaryYellowDark,
+                contentColor = DarkTextColor
+            ),
+            shadowColor = PrimaryYellowDark,
+            modifier = Modifier.padding(end = 15.dp)
+                .height(35.dp)
+                .width(140.dp)
+                .shadow(
+                    elevation = 24.dp,
+                    shape = RoundedCornerShape(percent = 50)
+                )
+        )
     }
 }

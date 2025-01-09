@@ -43,9 +43,7 @@ fun HomeScreen(
             .systemBarsPadding(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Spacer(
-            modifier = Modifier.weight(weight = 1f)
-        )
+        Spacer(modifier = Modifier.weight(weight = 1f))
         Greetings()
         Spacer(
             modifier = Modifier.weight(weight = 1f)

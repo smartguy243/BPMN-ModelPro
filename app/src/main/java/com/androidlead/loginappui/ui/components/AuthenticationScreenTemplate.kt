@@ -145,6 +145,115 @@ fun AuthenticationScreenTemplate(
 }
 
 @Composable
+fun AuthenticationScreenTemplate2(
+    modifier: Modifier = Modifier,
+    backgroundGradient: Array<Pair<Float, Color>>,
+    @DrawableRes imgRes: Int,
+    title: String,
+    subtitle: String,
+    mainActionButtonTitle: String,
+    secondaryActionButtonTitle: String,
+    mainActionButtonColors: ButtonColors,
+    secondaryActionButtonColors: ButtonColors,
+    actionButtonShadow: Color,
+    onMainActionButtonClicked: () -> Unit,
+    onSecondaryActionButtonClicked: () -> Unit
+) {
+    val scrollState = rememberScrollState()
+    val coroutineScope = rememberCoroutineScope()
+    val keyboardHeight = WindowInsets.ime.getBottom(LocalDensity.current)
+
+    LaunchedEffect(keyboardHeight) {
+        coroutineScope.launch {
+            scrollState.scrollBy(keyboardHeight.toFloat())
+        }
+    }
+
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .background(Brush.verticalGradient(*backgroundGradient))
+            .systemBarsPadding()
+            .verticalScroll(scrollState)
+            .imePadding(),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Image(
+            painter = painterResource(imgRes),
+            contentDescription = null,
+            modifier = Modifier
+                .size(300.dp)
+                .padding(start = 30.dp)
+        )
+        Message(
+            title = title,
+            subtitle = subtitle
+        )
+        Spacer(
+            modifier = Modifier.height(8.dp)
+        )
+        InputField(
+            leadingIconRes = R.drawable.profil,
+            placeholderText = "First name",
+            modifier = Modifier.padding(horizontal = 24.dp)
+        )
+        Spacer(
+            modifier = Modifier.height(10.dp)
+        )
+        InputField(
+            leadingIconRes = R.drawable.password2,
+            placeholderText = "Last Name",
+            visualTransformation = PasswordVisualTransformation(),
+            modifier = Modifier.padding(horizontal = 24.dp)
+        )
+        Spacer(
+            modifier = Modifier.height(10.dp)
+        )
+        InputField(
+            leadingIconRes = R.drawable.profil,
+            placeholderText = "Email",
+            modifier = Modifier.padding(horizontal = 24.dp)
+        )
+        Spacer(
+            modifier = Modifier.height(10.dp)
+        )
+        InputField(
+            leadingIconRes = R.drawable.password2,
+            placeholderText = "Password",
+            visualTransformation = PasswordVisualTransformation(),
+            modifier = Modifier.padding(horizontal = 24.dp)
+        )
+        Spacer(
+            modifier = Modifier.height(10.dp)
+        )
+        ActionButton(
+            text = mainActionButtonTitle,
+            isNavigationArrowVisible = true,
+            onClicked = onMainActionButtonClicked,
+            colors = mainActionButtonColors,
+            shadowColor = actionButtonShadow,
+            modifier = Modifier.padding(horizontal = 24.dp)
+        )
+        Separator(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 40.dp)
+                .height(62.dp)
+        )
+        ActionButton(
+            text = secondaryActionButtonTitle,
+            isNavigationArrowVisible = false,
+            onClicked = onSecondaryActionButtonClicked,
+            colors = secondaryActionButtonColors,
+            shadowColor = actionButtonShadow,
+            modifier = Modifier
+                .padding(horizontal = 24.dp)
+                .padding(bottom = 24.dp)
+        )
+    }
+}
+
+@Composable
 private fun Message(
     modifier: Modifier = Modifier,
     title: String,
@@ -174,7 +283,7 @@ private fun Message(
 }
 
 @Composable
-private fun InputField(
+fun InputField(
     modifier: Modifier = Modifier,
     visualTransformation: VisualTransformation = VisualTransformation.None,
     @DrawableRes leadingIconRes: Int,

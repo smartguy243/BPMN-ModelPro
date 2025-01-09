@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("com.google.gms.google-services") version "4.4.2" apply false
 }
 
 android {
@@ -74,4 +75,19 @@ dependencies {
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
+
+    implementation(platform(libs.firebase.bom))
+
+    implementation(libs.firebase.auth.ktx)
+
+    // Import the Firebase BoM
+    implementation(platform(libs.firebase.bom))
+
+
+    implementation(libs.firebase.analytics)
+
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore)
 }
+
+
