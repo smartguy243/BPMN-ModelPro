@@ -15,12 +15,17 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
@@ -33,8 +38,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.androidlead.loginappui.R
 import com.androidlead.loginappui.ui.components.ActionButton
+import com.androidlead.loginappui.ui.components.LanguageOption
 import com.androidlead.loginappui.ui.theme.CharcoalGray
 import com.androidlead.loginappui.ui.theme.DarkTextColor
+import com.androidlead.loginappui.ui.theme.LightGray
 import com.androidlead.loginappui.ui.theme.LightLavender
 import com.androidlead.loginappui.ui.theme.MintCream
 import com.androidlead.loginappui.ui.theme.SoftBlue
@@ -44,7 +51,11 @@ fun MenuScreen(onHomeClicked: () -> Unit,
                onLoginClicked: () -> Unit,
                onBuilderClicked: () -> Unit,
                onSettingsClicked: () -> Unit,
-               onLearnClicked: () -> Unit){
+               onLearnClicked: () -> Unit,
+               onSearchClicked: () -> Unit){
+    var showDialog by remember { mutableStateOf(false) }
+    var selectedLanguage by remember { mutableStateOf("Русский") }
+    var isNightMode by remember { mutableStateOf(false)}
 
     Column(
         modifier = Modifier
@@ -62,7 +73,7 @@ fun MenuScreen(onHomeClicked: () -> Unit,
 
         Spacer(modifier = Modifier.height(15.dp))
 
-        Row (modifier = Modifier.fillMaxWidth()){
+        Row(modifier = Modifier.fillMaxWidth()) {
 
             Spacer(modifier = Modifier.width(240.dp))
 
@@ -76,8 +87,8 @@ fun MenuScreen(onHomeClicked: () -> Unit,
                 ),
                 shadowColor = DarkTextColor,
                 modifier = Modifier.padding(end = 15.dp)
-                                   .height(35.dp)
-                                   .shadow(
+                    .height(35.dp)
+                    .shadow(
                         elevation = 24.dp,
                         shape = RoundedCornerShape(percent = 50)
                     ),
@@ -96,27 +107,34 @@ fun MenuScreen(onHomeClicked: () -> Unit,
 
         Spacer(modifier = Modifier.height(10.dp))
 
-        Text(text ="Design smarter processes from your pocket.",
+        Text(
+            text = "Design smarter processes from your pocket.",
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Center,
-            color = CharcoalGray)
+            color = CharcoalGray
+        )
 
         Spacer(modifier = Modifier.height(30.dp))
 
-        Row(modifier = Modifier.fillMaxWidth(),
+        Row(
+            modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly,
-            verticalAlignment = Alignment.CenterVertically) {
+            verticalAlignment = Alignment.CenterVertically
+        ) {
 
-            Card(modifier = Modifier.size(115.dp)
-                .clickable { },
+            Card(
+                modifier = Modifier.size(115.dp)
+                    .clickable { },
                 colors = CardDefaults
                     .cardColors(containerColor = Color.White),
                 shape = RoundedCornerShape(30.dp),
                 elevation = CardDefaults.cardElevation(
-                    defaultElevation = 120.dp)) {
+                    defaultElevation = 120.dp
+                )
+            ) {
                 Column(
                     modifier = Modifier.fillMaxSize()
-                        .clickable {onBuilderClicked()},
+                        .clickable { onBuilderClicked() },
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
@@ -138,17 +156,20 @@ fun MenuScreen(onHomeClicked: () -> Unit,
                 }
             }
 
-            Card(modifier = Modifier.size(115.dp)
-                .clickable { },
+            Card(
+                modifier = Modifier.size(115.dp)
+                    .clickable { },
                 colors = CardDefaults
                     .cardColors(containerColor = MintCream),
                 shape = RoundedCornerShape(30.dp),
                 elevation = CardDefaults.cardElevation(
-                    defaultElevation = 120.dp)) {
+                    defaultElevation = 120.dp
+                )
+            ) {
                 Column(
                     modifier = Modifier
                         .size(115.dp)
-                        .clickable {},
+                        .clickable {onSearchClicked()},
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
@@ -171,16 +192,19 @@ fun MenuScreen(onHomeClicked: () -> Unit,
                 }
             }
 
-            Card(modifier = Modifier.size(115.dp)
-                .clickable { },
+            Card(
+                modifier = Modifier.size(115.dp)
+                    .clickable { },
                 colors = CardDefaults
                     .cardColors(containerColor = Color.White.copy(alpha = 0.9f)),
                 shape = RoundedCornerShape(30.dp),
                 elevation = CardDefaults.cardElevation(
-                    defaultElevation = 120.dp)) {
+                    defaultElevation = 120.dp
+                )
+            ) {
                 Column(
                     modifier = Modifier.fillMaxSize()
-                        .clickable {onBuilderClicked()},
+                        .clickable { onBuilderClicked() },
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
@@ -206,9 +230,11 @@ fun MenuScreen(onHomeClicked: () -> Unit,
 
         Spacer(modifier = Modifier.height(4.dp))
 
-        Row(modifier = Modifier.fillMaxWidth(),
+        Row(
+            modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly,
-            verticalAlignment = Alignment.CenterVertically) {
+            verticalAlignment = Alignment.CenterVertically
+        ) {
 
             Card(
                 modifier = Modifier.size(115.dp)
@@ -223,7 +249,7 @@ fun MenuScreen(onHomeClicked: () -> Unit,
                 Column(
                     modifier = Modifier
                         .size(115.dp)
-                        .clickable {onBuilderClicked()},
+                        .clickable { onBuilderClicked() },
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
@@ -258,7 +284,7 @@ fun MenuScreen(onHomeClicked: () -> Unit,
             ) {
                 Column(
                     modifier = Modifier.fillMaxSize()
-                        .clickable {onSettingsClicked()},
+                        .clickable { onSettingsClicked() },
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
@@ -294,7 +320,7 @@ fun MenuScreen(onHomeClicked: () -> Unit,
                 Column(
                     modifier = Modifier
                         .size(115.dp)
-                        .clickable {onLearnClicked()},
+                        .clickable { onLearnClicked() },
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
@@ -320,58 +346,86 @@ fun MenuScreen(onHomeClicked: () -> Unit,
 
         Spacer(modifier = Modifier.height(195.dp))
 
-        Text(text ="Actual App version  v1.2.0",
+        Text(
+            text = "Actual App version  v1.2.0",
             modifier = Modifier.fillMaxWidth(),
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
-            color = DarkTextColor)
+            color = DarkTextColor
+        )
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        Row(modifier = Modifier
-            .padding(horizontal = 110.dp)
-            .fillMaxWidth(),
+        Row(
+            modifier = Modifier
+                .padding(horizontal = 110.dp)
+                .fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-
-            Card(modifier = Modifier.size(40.dp)
-                .clickable { },
-                colors = CardDefaults
-                    .cardColors(containerColor = MintCream),
+            Card(
+                modifier = Modifier.size(40.dp)
+                    .clickable { showDialog = true },
+                colors = CardDefaults.cardColors(containerColor = MintCream),
                 shape = RoundedCornerShape(20.dp),
-                elevation = CardDefaults.cardElevation(
-                    defaultElevation = 15.dp)) {
-
+                elevation = CardDefaults.cardElevation(defaultElevation = 15.dp)
+            ) {
                 Image(
                     painter = painterResource(id = R.drawable.world),
                     contentDescription = "languages",
-                    modifier = Modifier.size(30.dp)
-                        .padding(start = 10.dp, top = 10.dp))
+                    modifier = Modifier.size(30.dp).padding(start = 10.dp, top = 10.dp)
+                )
             }
 
-            Card(modifier = Modifier.size(40.dp)
-                .clickable { },
+            // Dialog for language selection
+            if (showDialog) {
+                AlertDialog(
+                    onDismissRequest = { showDialog = false },
+                    title = { Text("Choisissez une langue") },
+                    text = {
+                        Column {
+                            LanguageOption("Русский", selectedLanguage) {
+                                selectedLanguage = "Русский"
+                                showDialog = false
+                            }
+                            LanguageOption("English", selectedLanguage) {
+                                selectedLanguage = "English"
+                                showDialog = false
+                            }
+                        }
+                    },
+                    confirmButton = {},
+                    dismissButton = {}
+                )
+            }
+                Card(
+                    modifier = Modifier.size(40.dp)
+                        .clickable {
+                            isNightMode = !isNightMode
+                        },
+                    colors = CardDefaults.cardColors(containerColor = MintCream),
+                    shape = RoundedCornerShape(20.dp),
+                    elevation = CardDefaults.cardElevation(defaultElevation = 15.dp)
+                ) {
+                    Image(
+                        painter = painterResource(id = if (isNightMode) R.drawable.sun else R.drawable.moon),
+                        contentDescription = if (isNightMode) "sun" else "light",
+                        modifier = Modifier.size(30.dp)
+                            .padding(start = 10.dp, top = 10.dp)
+                    )
+                }
+
+
+            Card(
+                modifier = Modifier.size(40.dp)
+                    .clickable { },
                 colors = CardDefaults
                     .cardColors(containerColor = MintCream),
                 shape = RoundedCornerShape(20.dp),
                 elevation = CardDefaults.cardElevation(
-                    defaultElevation = 15.dp)) {
-
-                Image(
-                    painter = painterResource(id = R.drawable.moon),
-                    contentDescription = "light",
-                    modifier = Modifier.size(30.dp)
-                        .padding(start = 10.dp, top = 10.dp))
-            }
-
-            Card(modifier = Modifier.size(40.dp)
-                .clickable { },
-                colors = CardDefaults
-                    .cardColors(containerColor = MintCream),
-                shape = RoundedCornerShape(20.dp),
-                elevation = CardDefaults.cardElevation(
-                    defaultElevation = 15.dp)) {
+                    defaultElevation = 15.dp
+                )
+            ) {
 
                 Image(
                     painter = painterResource(id = R.drawable.info),
@@ -380,7 +434,8 @@ fun MenuScreen(onHomeClicked: () -> Unit,
                         .padding(start = 10.dp, top = 10.dp)
                 )
             }
-
         }
     }
 }
+
+

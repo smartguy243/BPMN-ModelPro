@@ -7,7 +7,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.platform.LocalContext
 
 @Composable
-fun BuilderScreen(onBuilderClicked: () -> Unit) {
+fun BuilderScreen() {
     val context = LocalContext.current
 
     LaunchedEffect(Unit) {
@@ -31,7 +31,7 @@ fun BuilderScreen(onBuilderClicked: () -> Unit) {
 //            }
 //        },
 //        update = { webView ->
-//            webView.loadUrl("https://www.bpmn.io")
+//            webView.loadUrl("https://bpmn.io")
 //        }
 //    )
 //}

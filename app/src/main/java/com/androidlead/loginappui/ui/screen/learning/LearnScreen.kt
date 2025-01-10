@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -27,6 +28,10 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarColors
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
@@ -40,6 +45,7 @@ import androidx.compose.ui.unit.sp
 import com.androidlead.loginappui.R
 import com.androidlead.loginappui.ui.components.ActionButton
 import com.androidlead.loginappui.ui.components.InputField
+import com.androidlead.loginappui.ui.components.LanguageOption
 import com.androidlead.loginappui.ui.theme.DarkTextColor
 import com.androidlead.loginappui.ui.theme.Lavender
 import com.androidlead.loginappui.ui.theme.LightGray
@@ -518,37 +524,64 @@ fun LearnScreen(onOpenMenuClicked: () -> Unit,
                     containerColor = SoftBlue,
                     contentColor = Color.Black.copy(alpha = 0.1f)
                 ) {
+                    var showDialog by remember { mutableStateOf(false) }
+                    var selectedLanguage by remember { mutableStateOf("Русский") }
+                    var isNightMode by remember { mutableStateOf(false)}
+
                     Spacer(modifier = Modifier.weight(weight = 1f))
 
-                    Card(modifier = Modifier.size(40.dp)
-                        .clickable { },
-                        colors = CardDefaults
-                            .cardColors(containerColor = MintCream),
+                    Card(
+                        modifier = Modifier.size(40.dp)
+                            .clickable { showDialog = true },
+                        colors = CardDefaults.cardColors(containerColor = MintCream),
                         shape = RoundedCornerShape(20.dp),
-                        elevation = CardDefaults.cardElevation(
-                            defaultElevation = 15.dp)) {
-
+                        elevation = CardDefaults.cardElevation(defaultElevation = 15.dp)
+                    ) {
                         Image(
                             painter = painterResource(id = R.drawable.world),
                             contentDescription = "languages",
-                            modifier = Modifier.size(30.dp)
-                                .padding(start = 10.dp, top = 10.dp))
+                            modifier = Modifier.size(30.dp).padding(start = 10.dp, top = 10.dp)
+                        )
+                    }
+
+                    // Dialog for language selection
+                    if (showDialog) {
+                        AlertDialog(
+                            onDismissRequest = { showDialog = false },
+                            title = { Text("Choisissez une langue") },
+                            text = {
+                                Column {
+                                    LanguageOption("Русский", selectedLanguage) {
+                                        selectedLanguage = "Русский"
+                                        showDialog = false
+                                    }
+                                    LanguageOption("English", selectedLanguage) {
+                                        selectedLanguage = "English"
+                                        showDialog = false
+                                    }
+                                }
+                            },
+                            confirmButton = {},
+                            dismissButton = {}
+                        )
                     }
                     Spacer(modifier = Modifier.weight(weight = 0.4f))
 
-                    Card(modifier = Modifier.size(40.dp)
-                        .clickable { },
-                        colors = CardDefaults
-                            .cardColors(containerColor = MintCream),
+                    Card(
+                        modifier = Modifier.size(40.dp)
+                            .clickable {
+                                isNightMode = !isNightMode
+                            },
+                        colors = CardDefaults.cardColors(containerColor = MintCream),
                         shape = RoundedCornerShape(20.dp),
-                        elevation = CardDefaults.cardElevation(
-                            defaultElevation = 15.dp)) {
-
+                        elevation = CardDefaults.cardElevation(defaultElevation = 15.dp)
+                    ) {
                         Image(
-                            painter = painterResource(id = R.drawable.moon),
-                            contentDescription = "light",
+                            painter = painterResource(id = if (isNightMode) R.drawable.sun else R.drawable.moon),
+                            contentDescription = if (isNightMode) "sun" else "light",
                             modifier = Modifier.size(30.dp)
-                                .padding(start = 10.dp, top = 10.dp))
+                                .padding(start = 10.dp, top = 10.dp)
+                        )
                     }
                     Spacer(modifier = Modifier.weight(weight = 0.4f))
 

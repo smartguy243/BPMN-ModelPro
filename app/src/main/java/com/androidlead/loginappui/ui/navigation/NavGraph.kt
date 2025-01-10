@@ -9,6 +9,7 @@ sealed class NavGraph(val route: String) {
     data object Builder: NavGraph(route = "builder_screen")
     data object Settings: NavGraph(route = "setting_screen")
     data object Learn: NavGraph(route = "learn_screen")
+    data object Search: NavGraph(route = "search_screen")
 
     //Learning material
     data object Intro: NavGraph(route = "intro_screen")

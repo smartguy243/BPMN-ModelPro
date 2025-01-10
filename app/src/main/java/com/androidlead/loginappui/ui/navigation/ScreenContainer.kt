@@ -18,6 +18,7 @@ import com.androidlead.loginappui.ui.screen.learning.ToolsScreen
 import com.androidlead.loginappui.ui.screen.login.LoginScreen
 import com.androidlead.loginappui.ui.screen.menu.MenuScreen
 import com.androidlead.loginappui.ui.screen.registration.RegistrationScreen
+import com.androidlead.loginappui.ui.screen.search.SearchScreen
 import com.androidlead.loginappui.ui.screen.setting.SettingsScreen
 import com.androidlead.loginappui.ui.screen.welcome.WelcomeScreen
 
@@ -80,14 +81,14 @@ fun ScreenContainer() {
                 onLearnClicked = {
                     navHost.navigate(NavGraph.Learn.route)
                 }
+                ,
+                onSearchClicked = {
+                    navHost.navigate(NavGraph.Search.route)
+                }
             )
         }
         composable(NavGraph.Builder.route) {
-            BuilderScreen(
-                onBuilderClicked = {
-                    navHost.navigate(NavGraph.Menu.route)
-                }
-            )
+            BuilderScreen()
         }
         composable(NavGraph.Settings.route) {
             SettingsScreen(
@@ -99,6 +100,40 @@ fun ScreenContainer() {
                 },
                 onLoginClicked = {
                     navHost.navigate(NavGraph.Login.route)
+                }
+            )
+        }
+        composable(NavGraph.Search.route) {
+            SearchScreen(
+                onSettingsClicked = {
+                    navHost.navigate(NavGraph.Settings.route)
+                },
+                onOpenMenuClicked = {
+                    navHost.navigate(NavGraph.Menu.route)
+                },
+                onLearnIntroClicked = {
+                    navHost.navigate(NavGraph.Intro.route)
+                },
+                onLearnEventClicked = {
+                    navHost.navigate(NavGraph.Event.route)
+                },
+                onLearnTypeClicked = {
+                    navHost.navigate(NavGraph.Type.route)
+                },
+                onLearnProcessClicked = {
+                    navHost.navigate(NavGraph.Process.route)
+                },
+                onLearnToolsClicked = {
+                    navHost.navigate(NavGraph.Tools.route)
+                },
+                onLearnArtefactClicked = {
+                    navHost.navigate(NavGraph.Artefact.route)
+                },
+                onLearnBusinessProcessClicked = {
+                    navHost.navigate(NavGraph.BusinessProcess.route)
+                },
+                onLearnImprovementClicked = {
+                    navHost.navigate(NavGraph.Improvement.route)
                 }
             )
         }
