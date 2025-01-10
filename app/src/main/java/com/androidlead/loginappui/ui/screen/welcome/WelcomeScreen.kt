@@ -33,6 +33,7 @@ import com.androidlead.loginappui.ui.theme.PrimaryYellowDark
 import com.androidlead.loginappui.ui.theme.PrimaryYellowLight
 import com.androidlead.loginappui.ui.theme.SoftBlue
 import com.androidlead.loginappui.ui.theme.SteelBlue
+import com.androidlead.loginappui.ui.theme.WarmBeige
 
 @Composable
 fun WelcomeScreen(
@@ -46,7 +47,7 @@ fun WelcomeScreen(
                 Brush.verticalGradient(
                     0f to LightLavender,
                     0.5f to MintCream,
-                    1.3f to SoftBlue
+                    1.6f to SoftBlue
                 )
             )
             .systemBarsPadding(),
@@ -87,7 +88,7 @@ fun WelcomeScreen(
             isNavigationArrowVisible = true,
             onClicked = onOpenLoginClicked,
             colors = ButtonDefaults.buttonColors(
-                containerColor = SteelBlue,
+                containerColor = MintCream,
                 contentColor = DarkTextColor
             ),
             shadowColor = Color.Black,

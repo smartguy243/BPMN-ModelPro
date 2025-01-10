@@ -39,8 +39,8 @@ fun ActionButton(
             .fillMaxWidth()
             .height(62.dp)
             .shadow(
-                elevation = 24.dp,
-                shape = RoundedCornerShape(percent = 50),
+                elevation = 40.dp,
+                shape = RoundedCornerShape(percent = 12),
                 spotColor = shadowColor
             ),
         onClick = onClicked,

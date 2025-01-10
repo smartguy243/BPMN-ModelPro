@@ -8,12 +8,16 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import com.androidlead.loginappui.R
 import com.androidlead.loginappui.ui.components.AuthenticationScreenTemplate
+import com.androidlead.loginappui.ui.theme.DarkTextColor
+import com.androidlead.loginappui.ui.theme.Lavender
 import com.androidlead.loginappui.ui.theme.LightLavender
 import com.androidlead.loginappui.ui.theme.MintCream
 import com.androidlead.loginappui.ui.theme.PrimaryPink
 import com.androidlead.loginappui.ui.theme.PrimaryPinkBlended
 import com.androidlead.loginappui.ui.theme.PrimaryPinkDark
 import com.androidlead.loginappui.ui.theme.PrimaryPinkLight
+import com.androidlead.loginappui.ui.theme.PrimaryYellow
+import com.androidlead.loginappui.ui.theme.PrimaryYellowLight
 import com.androidlead.loginappui.ui.theme.SoftBlue
 
 @Composable
@@ -35,12 +39,12 @@ fun LoginScreen(
         mainActionButtonTitle = "Continue",
         secondaryActionButtonTitle = "Create an Account",
         mainActionButtonColors = ButtonDefaults.buttonColors(
-            containerColor = PrimaryPinkDark,
-            contentColor = Color.White
+            containerColor = PrimaryYellow,
+            contentColor = DarkTextColor
         ),
         secondaryActionButtonColors = ButtonDefaults.buttonColors(
-            containerColor = PrimaryPinkLight,
-            contentColor = Color.White
+            containerColor = MintCream,
+            contentColor = DarkTextColor
         ),
         actionButtonShadow = PrimaryPinkDark,
         onMainActionButtonClicked = onLoginClicked,

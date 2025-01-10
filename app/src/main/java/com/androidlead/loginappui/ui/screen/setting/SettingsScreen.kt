@@ -48,13 +48,20 @@ import com.androidlead.loginappui.R
 import com.androidlead.loginappui.ui.components.ActionButton
 import com.androidlead.loginappui.ui.components.InputField
 import com.androidlead.loginappui.ui.theme.DarkTextColor
+import com.androidlead.loginappui.ui.theme.Lavender
+import com.androidlead.loginappui.ui.theme.LightGray
 import com.androidlead.loginappui.ui.theme.LightLavender
 import com.androidlead.loginappui.ui.theme.MintCream
+import com.androidlead.loginappui.ui.theme.Peach
 import com.androidlead.loginappui.ui.theme.PrimaryPinkBlended
 import com.androidlead.loginappui.ui.theme.PrimaryYellow
 import com.androidlead.loginappui.ui.theme.PrimaryYellowDark
 import com.androidlead.loginappui.ui.theme.PrimaryYellowLight
+import com.androidlead.loginappui.ui.theme.Purple80
+import com.androidlead.loginappui.ui.theme.PurpleGrey80
+import com.androidlead.loginappui.ui.theme.RichTeal
 import com.androidlead.loginappui.ui.theme.SoftBlue
+import com.androidlead.loginappui.ui.theme.SteelBlue
 import com.androidlead.loginappui.ui.theme.WarmBeige
 
 @Composable
@@ -98,7 +105,7 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                 elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
                 modifier = Modifier
                     .padding(start = 20.dp, end = 20.dp),
-                colors = CardDefaults.cardColors(Color.White)
+                colors = CardDefaults.cardColors(MintCream)
             ) {
 
                 Column(
@@ -113,13 +120,13 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
                         Image(
-                            painter = painterResource(id = R.drawable.profil1),
+                            painter = painterResource(id = R.drawable.ic_person),
                             contentDescription = "profil",
                             contentScale = ContentScale.Crop,
                             modifier = Modifier
                                 .clip(CircleShape)
                                 .padding(top = 3.dp)
-                                .size(60.dp),
+                                .size(50.dp),
                             alignment = Alignment.CenterStart
                         )
 
@@ -128,17 +135,17 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                                 text = "Иван Иванович",
                                 fontWeight = FontWeight.Bold,
                                 modifier = Modifier
-                                    .padding(top = 18.dp, start = 12.dp),
-                                fontSize = 25.sp
+                                    .padding(top = 18.dp, start = 10.dp),
+                                fontSize = 20.sp,
+                                color = DarkTextColor
                             )
                         }
                         Image(
                             modifier = Modifier
-                                .padding(start= 70.dp, top = 16.dp)
+                                .padding(start= 30.dp, top = 16.dp)
                                 .size(35.dp),
                             painter = painterResource(id = R.drawable.icon_qr_code_scanner),
                             contentDescription = "icon_scanner",
-                            colorFilter = ColorFilter.tint(Color.Blue.copy(alpha = 0.6f)),
                             alignment = Alignment.Center
                         )
 
@@ -154,20 +161,21 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
 
                         Card(
                             elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
-                            colors = CardDefaults.cardColors(Color.White),
+                            colors = CardDefaults.cardColors(MintCream),
                             shape = RoundedCornerShape(4.dp)
                         ) {
                             Image(
                                 painter = painterResource(id = R.drawable.avatar),
                                 contentDescription = "avatar",
                                 modifier = Modifier
-                                    .background(Color.Blue.copy(alpha = 0.7f))
+                                    .background(Color.Black.copy(alpha = 0.7f))
                             )
                         }
                         Text(
                             text = "Управление учётной записью",
                             modifier = Modifier
-                                .padding(start = 15.dp)
+                                .padding(start = 15.dp),
+                            color = DarkTextColor
                         )
 
                         Image(
@@ -176,6 +184,7 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                             colorFilter = ColorFilter.tint(Color.Gray.copy(alpha = 0.7f)),
                             modifier = Modifier
                                 .padding(top = 6.dp, start = 172.dp)
+                                .background(Color.Black.copy(alpha = 0.7f))
                         )
                     }
                 }
@@ -186,14 +195,14 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
 
             Spacer(
                 modifier = Modifier
-                    .padding(bottom = 30.dp)
+                    .padding(bottom = 20.dp)
             )
 
             Card(
                 elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
                 modifier = Modifier
                     .padding(start = 20.dp, end = 20.dp),
-                colors = CardDefaults.cardColors(Color.White)
+                colors = CardDefaults.cardColors(MintCream)
             ) {
 
                 Column(
@@ -216,13 +225,14 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                                 painter = painterResource(id = R.drawable.star),
                                 contentDescription = "star",
                                 modifier = Modifier
-                                    .background(Color.Yellow.copy(alpha = 1f))
+                                    .background(Color.Black.copy(alpha = 0.7f))
                             )
                         }
                         Text(
                             text = "Messages importants",
                             modifier = Modifier
-                                .padding(start = 15.dp)
+                                .padding(start = 15.dp),
+                            color = DarkTextColor
                         )
 
                         Image(
@@ -257,13 +267,14 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                                 painter = painterResource(id = R.drawable.computer),
                                 contentDescription = "computer",
                                 modifier = Modifier
-                                    .background(Color.Green.copy(alpha = 0.9f))
+                                    .background(Color.Black.copy(alpha = 0.7f))
                             )
                         }
                         Text(
                             text = "Appareils connectés",
                             modifier = Modifier
-                                .padding(start = 15.dp)
+                                .padding(start = 15.dp),
+                            color = DarkTextColor
                         )
 
                         Image(
@@ -275,6 +286,13 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                         )
 
                     }
+                    Spacer(
+                        modifier = Modifier
+                            .padding(bottom = 10.dp)
+                    )
+
+                    HorizontalDivider(thickness = 1.dp)
+
                     Row(
                         modifier = Modifier
                             .padding(top = 8.dp, end = 5.dp),
@@ -291,13 +309,14 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                                 contentDescription = "key",
                                 modifier = Modifier
                                     .rotate(90f)
-                                    .background(Color.Blue.copy(alpha = 0.7f))
+                                    .background(Color.Black.copy(alpha = 0.7f))
                             )
                         }
                         Text(
                             text = "Compte",
                             modifier = Modifier
-                                .padding(start = 15.dp)
+                                .padding(start = 15.dp),
+                            color = DarkTextColor
                         )
 
                         Image(
@@ -316,7 +335,7 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                             .padding(bottom = 10.dp)
                     )
 
-                    Divider(thickness = 1.dp)
+                    HorizontalDivider(thickness = 1.dp)
 
                     Row(
                         modifier = Modifier
@@ -333,13 +352,14 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                                 painter = painterResource(id = R.drawable.lock),
                                 contentDescription = "lock",
                                 modifier = Modifier
-                                    .background(Color.Blue.copy(alpha = 0.5f))
+                                    .background(Color.Black.copy(alpha = 0.7f))
                             )
                         }
                         Text(
                             text = "Confidentialité",
                             modifier = Modifier
-                                .padding(start = 15.dp)
+                                .padding(start = 15.dp),
+                            color = DarkTextColor
                         )
 
                         Image(
@@ -373,13 +393,14 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                                 painter = painterResource(id = R.drawable.discussions),
                                 contentDescription = "discussions",
                                 modifier = Modifier
-                                    .background(Color.Green.copy(alpha = 0.7f))
+                                    .background(Color.Black.copy(alpha = 0.7f))
                             )
                         }
                         Text(
                             text = "Discussions",
                             modifier = Modifier
-                                .padding(start = 15.dp)
+                                .padding(start = 15.dp),
+                            color = DarkTextColor
                         )
 
                         Image(
@@ -413,13 +434,14 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                                 painter = painterResource(id = R.drawable.notifications),
                                 contentDescription = "notificqtions",
                                 modifier = Modifier
-                                    .background(Color.Red.copy(alpha = 0.7f))
+                                    .background(Color.Black.copy(alpha = 0.7f))
                             )
                         }
                         Text(
                             text = "Notificqtions",
                             modifier = Modifier
-                                .padding(start = 15.dp)
+                                .padding(start = 15.dp),
+                            color = DarkTextColor
                         )
 
                         Image(
@@ -453,13 +475,14 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                                 painter = painterResource(id = R.drawable.stockage),
                                 contentDescription = "stockage",
                                 modifier = Modifier
-                                    .background(Color.Green.copy(alpha = 0.7f))
+                                    .background(Color.Black.copy(alpha = 0.7f))
                             )
                         }
                         Text(
                             text = "Stockage et données",
                             modifier = Modifier
-                                .padding(start = 15.dp)
+                                .padding(start = 15.dp),
+                            color = DarkTextColor
                         )
 
                         Image(
@@ -477,21 +500,14 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
 
             Spacer(
                 modifier = Modifier
-                    .padding(bottom = 30.dp)
-            )
-
-// Third Column
-
-            Spacer(
-                modifier = Modifier
-                    .padding(bottom = 30.dp)
+                    .padding(bottom = 10.dp)
             )
 
             Card(
                 elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
                 modifier = Modifier
                     .padding(start = 20.dp, end = 20.dp),
-                colors = CardDefaults.cardColors(Color.White)
+                colors = CardDefaults.cardColors(MintCream)
             ) {
 
                 Column(
@@ -514,13 +530,14 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                                 painter = painterResource(id = R.drawable.info2),
                                 contentDescription = "aide",
                                 modifier = Modifier
-                                    .background(Color.Blue.copy(alpha = 0.7f))
+                                    .background(Color.Black.copy(alpha = 0.7f))
                             )
                         }
                         Text(
                             text = "Aide",
                             modifier = Modifier
-                                .padding(start = 15.dp)
+                                .padding(start = 15.dp),
+                            color = DarkTextColor
                         )
 
                         Image(
@@ -532,13 +549,12 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                         )
 
                     }
-
                     Spacer(
                         modifier = Modifier
                             .padding(bottom = 10.dp)
                     )
 
-                    Divider(thickness = 1.dp)
+                    HorizontalDivider(thickness = 1.dp)
 
                     Row(
                         modifier = Modifier
@@ -555,13 +571,14 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                                 painter = painterResource(id = R.drawable.heart),
                                 contentDescription = "inviter",
                                 modifier = Modifier
-                                    .background(Color.Red.copy(alpha = 0.7f))
+                                    .background(Color.Black.copy(alpha = 0.7f))
                             )
                         }
                         Text(
                             text = "Inviter un contact",
                             modifier = Modifier
-                                .padding(start = 15.dp)
+                                .padding(start = 15.dp),
+                            color = DarkTextColor
                         )
 
                         Image(
@@ -578,14 +595,6 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
 
             }
 
-            Spacer(
-                modifier = Modifier
-                    .padding(bottom = 10.dp)
-            )
-            Column {
-                Text(text = "")
-            }
-
         }
 
     }
@@ -595,12 +604,20 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
 @Composable
 fun TopAppBarCompose() {
     TopAppBar(
+        colors = TopAppBarColors(
+            containerColor = Lavender,
+            scrolledContainerColor = LightGray,
+            navigationIconContentColor = LightGray,
+            titleContentColor = DarkTextColor,
+            actionIconContentColor = LightGray,
+        ),
         title = {
         Text(
             text = "Настройки пользователя",
             modifier = Modifier
-                .fillMaxWidth(),
-            fontSize = 18.sp,
+                .fillMaxWidth()
+                .padding(end = 15.dp),
+            fontSize = 27.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center
         )
@@ -610,7 +627,7 @@ fun TopAppBarCompose() {
 @Composable
 fun BottomAppBarCompose(onBuilderClicked: () -> Unit, onLoginClicked: () -> Unit) {
     BottomAppBar(
-        containerColor = WarmBeige,
+        containerColor = SoftBlue,
         contentColor = Color.Black.copy(alpha = 0.1f)
     ) {
         Spacer(modifier = Modifier.weight(weight = 1f))
@@ -619,10 +636,10 @@ fun BottomAppBarCompose(onBuilderClicked: () -> Unit, onLoginClicked: () -> Unit
             isNavigationArrowVisible = true,
             onClicked = onBuilderClicked,
             colors = ButtonDefaults.buttonColors(
-                containerColor = LightLavender,
+                containerColor = MintCream,
                 contentColor = DarkTextColor
             ),
-            shadowColor = PrimaryYellowDark,
+            shadowColor = DarkTextColor,
             modifier = Modifier.padding(end = 15.dp)
                 .height(35.dp)
                 .width(140.dp)
@@ -637,10 +654,10 @@ fun BottomAppBarCompose(onBuilderClicked: () -> Unit, onLoginClicked: () -> Unit
             isNavigationArrowVisible = true,
             onClicked = onLoginClicked,
             colors = ButtonDefaults.buttonColors(
-                containerColor = LightLavender,
+                containerColor = MintCream,
                 contentColor = DarkTextColor
             ),
-            shadowColor = PrimaryYellowDark,
+            shadowColor = DarkTextColor,
             modifier = Modifier.padding(end = 15.dp)
                 .height(35.dp)
                 .width(140.dp)

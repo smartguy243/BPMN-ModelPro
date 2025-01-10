@@ -34,18 +34,10 @@ import androidx.compose.ui.unit.sp
 import com.androidlead.loginappui.R
 import com.androidlead.loginappui.ui.components.ActionButton
 import com.androidlead.loginappui.ui.theme.CharcoalGray
-import com.androidlead.loginappui.ui.theme.CreamyPeach
 import com.androidlead.loginappui.ui.theme.DarkTextColor
 import com.androidlead.loginappui.ui.theme.LightLavender
 import com.androidlead.loginappui.ui.theme.MintCream
-import com.androidlead.loginappui.ui.theme.PrimaryGreen
-import com.androidlead.loginappui.ui.theme.PrimaryPinkBlended
-import com.androidlead.loginappui.ui.theme.PrimaryVioletLight
-import com.androidlead.loginappui.ui.theme.PrimaryYellow
-import com.androidlead.loginappui.ui.theme.PrimaryYellowDark
-import com.androidlead.loginappui.ui.theme.PrimaryYellowLight
 import com.androidlead.loginappui.ui.theme.SoftBlue
-import com.androidlead.loginappui.ui.theme.WarmBeige
 
 @Composable
 fun MenuScreen(onHomeClicked: () -> Unit,
@@ -79,10 +71,10 @@ fun MenuScreen(onHomeClicked: () -> Unit,
                 isNavigationArrowVisible = true,
                 onClicked = onLoginClicked,
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = PrimaryGreen,
+                    containerColor = MintCream,
                     contentColor = DarkTextColor
                 ),
-                shadowColor = PrimaryYellowDark,
+                shadowColor = DarkTextColor,
                 modifier = Modifier.padding(end = 15.dp)
                                    .height(35.dp)
                                    .shadow(
@@ -302,7 +294,7 @@ fun MenuScreen(onHomeClicked: () -> Unit,
                 Column(
                     modifier = Modifier
                         .size(115.dp)
-                        .clickable {},
+                        .clickable {onLearnClicked()},
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
@@ -346,7 +338,7 @@ fun MenuScreen(onHomeClicked: () -> Unit,
             Card(modifier = Modifier.size(40.dp)
                 .clickable { },
                 colors = CardDefaults
-                    .cardColors(containerColor = PrimaryVioletLight),
+                    .cardColors(containerColor = MintCream),
                 shape = RoundedCornerShape(20.dp),
                 elevation = CardDefaults.cardElevation(
                     defaultElevation = 15.dp)) {
@@ -361,7 +353,7 @@ fun MenuScreen(onHomeClicked: () -> Unit,
             Card(modifier = Modifier.size(40.dp)
                 .clickable { },
                 colors = CardDefaults
-                    .cardColors(containerColor = PrimaryVioletLight),
+                    .cardColors(containerColor = MintCream),
                 shape = RoundedCornerShape(20.dp),
                 elevation = CardDefaults.cardElevation(
                     defaultElevation = 15.dp)) {
@@ -376,7 +368,7 @@ fun MenuScreen(onHomeClicked: () -> Unit,
             Card(modifier = Modifier.size(40.dp)
                 .clickable { },
                 colors = CardDefaults
-                    .cardColors(containerColor = PrimaryVioletLight),
+                    .cardColors(containerColor = MintCream),
                 shape = RoundedCornerShape(20.dp),
                 elevation = CardDefaults.cardElevation(
                     defaultElevation = 15.dp)) {

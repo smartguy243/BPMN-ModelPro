@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.androidlead.loginappui.ui.screen.container.ScreenContainer
+import com.androidlead.loginappui.ui.navigation.ScreenContainer
 import com.androidlead.loginappui.ui.theme.LoginAppUiTheme
 
 class MainActivity : ComponentActivity() {

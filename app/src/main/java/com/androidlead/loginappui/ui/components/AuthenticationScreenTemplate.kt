@@ -49,7 +49,12 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.androidlead.loginappui.R
+import com.androidlead.loginappui.ui.theme.CharcoalGray
 import com.androidlead.loginappui.ui.theme.DarkTextColor
+import com.androidlead.loginappui.ui.theme.LightGray
+import com.androidlead.loginappui.ui.theme.MintCream
+import com.androidlead.loginappui.ui.theme.SoftRed
+import com.androidlead.loginappui.ui.theme.SteelBlue
 import kotlinx.coroutines.launch
 
 @Composable
@@ -123,7 +128,7 @@ fun AuthenticationScreenTemplate(
             onClicked = onMainActionButtonClicked,
             colors = mainActionButtonColors,
             shadowColor = actionButtonShadow,
-            modifier = Modifier.padding(horizontal = 24.dp)
+            modifier = Modifier.padding(horizontal = 50.dp)
         )
         Separator(
             modifier = Modifier
@@ -138,7 +143,7 @@ fun AuthenticationScreenTemplate(
             colors = secondaryActionButtonColors,
             shadowColor = actionButtonShadow,
             modifier = Modifier
-                .padding(horizontal = 24.dp)
+                .padding(horizontal = 50.dp)
                 .padding(bottom = 24.dp)
         )
     }
@@ -148,7 +153,7 @@ fun AuthenticationScreenTemplate(
 fun AuthenticationScreenTemplate2(
     modifier: Modifier = Modifier,
     backgroundGradient: Array<Pair<Float, Color>>,
-    @DrawableRes imgRes: Int,
+    //@DrawableRes imgRes: Int,
     title: String,
     subtitle: String,
     mainActionButtonTitle: String,
@@ -178,19 +183,23 @@ fun AuthenticationScreenTemplate2(
             .imePadding(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Image(
-            painter = painterResource(imgRes),
-            contentDescription = null,
-            modifier = Modifier
-                .size(300.dp)
-                .padding(start = 30.dp)
+//        Image(
+//            painter = painterResource(imgRes),
+//            contentDescription = null,
+//            modifier = Modifier
+//                .size(300.dp)
+//                .padding(start = 30.dp)
+//        )
+        Spacer(
+            modifier = Modifier.height(87.dp)
         )
+
         Message(
             title = title,
             subtitle = subtitle
         )
         Spacer(
-            modifier = Modifier.height(8.dp)
+            modifier = Modifier.height(15.dp)
         )
         InputField(
             leadingIconRes = R.drawable.profil,
@@ -224,7 +233,7 @@ fun AuthenticationScreenTemplate2(
             modifier = Modifier.padding(horizontal = 24.dp)
         )
         Spacer(
-            modifier = Modifier.height(10.dp)
+            modifier = Modifier.height(13.dp)
         )
         ActionButton(
             text = mainActionButtonTitle,
@@ -232,12 +241,12 @@ fun AuthenticationScreenTemplate2(
             onClicked = onMainActionButtonClicked,
             colors = mainActionButtonColors,
             shadowColor = actionButtonShadow,
-            modifier = Modifier.padding(horizontal = 24.dp)
+            modifier = Modifier.padding(horizontal = 50.dp)
         )
         Separator(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 40.dp)
+                .padding(horizontal = 60.dp)
                 .height(62.dp)
         )
         ActionButton(
@@ -247,7 +256,7 @@ fun AuthenticationScreenTemplate2(
             colors = secondaryActionButtonColors,
             shadowColor = actionButtonShadow,
             modifier = Modifier
-                .padding(horizontal = 24.dp)
+                .padding(horizontal = 40.dp)
                 .padding(bottom = 24.dp)
         )
     }
@@ -311,8 +320,8 @@ fun InputField(
             focusedPlaceholderColor = DarkTextColor,
             focusedLeadingIconColor = DarkTextColor,
             unfocusedLeadingIconColor = DarkTextColor,
-            focusedContainerColor = Color.White,
-            unfocusedContainerColor = Color.White
+            focusedContainerColor = LightGray,
+            unfocusedContainerColor = LightGray
         ),
         textStyle = MaterialTheme.typography.bodyLarge.copy(
             fontWeight = FontWeight.Medium
@@ -345,7 +354,7 @@ private fun Separator(
         Text(
             text = "Or",
             style = MaterialTheme.typography.labelMedium,
-            color = Color.White
+            color = DarkTextColor
         )
         DashedLine(
             modifier = Modifier.weight(weight = 1f)
@@ -359,7 +368,7 @@ private fun DashedLine(
 ) {
     Canvas(modifier = modifier) {
         drawLine(
-            color = Color.White,
+            color = DarkTextColor,
             start = Offset(0f, 0f),
             end = Offset(size.width, 0f),
             pathEffect = PathEffect.dashPathEffect(floatArrayOf(8f, 8f), 0f),
