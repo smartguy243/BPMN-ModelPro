@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -44,7 +45,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -73,7 +76,6 @@ fun SearchScreen(
     onLearnImprovementClicked: () -> Unit
 ) {
     var searchQuery by remember { mutableStateOf("") }
-    val keyboardController = LocalSoftwareKeyboardController
 
     // Liste des cours
     val courses = listOf(
@@ -110,18 +112,22 @@ fun SearchScreen(
                         1.3f to SoftBlue
                     )
                 )
-                .systemBarsPadding()
                 .clickable(interactionSource = remember { MutableInteractionSource() }, indication = null) {
                 }
         ) {
             Column(
-                horizontalAlignment = Alignment.CenterHorizontally
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier
+                    .verticalScroll(rememberScrollState())
+                    .fillMaxSize()
             ) {
                 // Champ de recherche
                 InputField(
                     leadingIconRes = R.drawable.icon_search,
                     placeholderText = "Поиск",
-                    modifier = Modifier.padding(horizontal = 20.dp).height(50.dp),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 20.dp).height(50.dp),
                     value = searchQuery,
                     onValueChange = { searchQuery = it } // Mettre à jour la requête de recherche
                 )
@@ -140,18 +146,24 @@ fun SearchScreen(
                                     "Подпроцессы в BPMN" -> onLearnProcessClicked()
                                     "Средства оповещения в BPMN" -> onLearnToolsClicked()
                                     "Артефакты и данные в BPMN" -> onLearnArtefactClicked()
-                                    "Бизнес-процессоы в BPMN" -> onLearnBusinessProcessClicked()
+                                    "Бизнес-процессы в BPMN" -> onLearnBusinessProcessClicked()
                                     "Улучшение бизнес-процессов" -> onLearnImprovementClicked()
                                 }
                             })
                         }
                     } else {
+                        Spacer(modifier = Modifier.height(160.dp))
                         // Afficher un message si aucun résultat n'est trouvé
                         Text(
                             text = "Ничего не найдено",
-                            fontSize = 20.sp,
+                            fontSize = 25.sp,
+                            fontStyle = FontStyle.Italic,
+                            fontWeight = FontWeight.W500,
                             color = Color.Gray,
-                            modifier = Modifier.align(Alignment.CenterHorizontally)
+                            textAlign = TextAlign.Center,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .align(Alignment.CenterHorizontally)
                         )
                     }
                 }
@@ -171,12 +183,27 @@ fun InputField(
     TextField(
         value = value,
         onValueChange = onValueChange,
+        visualTransformation = VisualTransformation.None,
+        shape = RoundedCornerShape(percent = 25),
         modifier = modifier,
         placeholder = { Text(placeholderText) },
         leadingIcon = {
             Icon(painterResource(id = leadingIconRes), contentDescription = null)
         },
-        colors = TextFieldDefaults.colors(Color.White)
+        colors = TextFieldDefaults.colors(
+            focusedIndicatorColor = Color.Transparent,
+            disabledIndicatorColor = Color.Transparent,
+            unfocusedIndicatorColor = Color.Transparent,
+            errorIndicatorColor = Color.Transparent,
+            focusedTextColor = DarkTextColor,
+            unfocusedTextColor = DarkTextColor,
+            unfocusedPlaceholderColor = DarkTextColor,
+            focusedPlaceholderColor = DarkTextColor,
+            focusedLeadingIconColor = DarkTextColor,
+            unfocusedLeadingIconColor = DarkTextColor,
+            focusedContainerColor = Color.White,
+            unfocusedContainerColor = Color.White
+        )
     )
 }
 
@@ -184,9 +211,10 @@ fun InputField(
 fun CourseCard(courseName: String, onClick: () -> Unit) {
     Card(
         modifier = Modifier
+            .size(height = 70.dp, width = 500.dp)
             .clickable(onClick = onClick)
             .fillMaxWidth()
-            .padding(horizontal = 7.dp),
+            .padding(vertical = 3.dp, horizontal = 7.dp),
         colors = CardDefaults.cardColors(containerColor = Color.White),
         shape = RoundedCornerShape(10.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 120.dp)
@@ -197,7 +225,7 @@ fun CourseCard(courseName: String, onClick: () -> Unit) {
             horizontalArrangement = Arrangement.Center
         ) {
             Image(
-                painter = painterResource(id = R.drawable.opened_book3), // Changez l'image selon le besoin
+                painter = painterResource(id = R.drawable.opened_book2), //L
                 contentDescription = courseName,
                 modifier = Modifier.size(55.dp).padding(start = 20.dp, top = 3.dp)
             )

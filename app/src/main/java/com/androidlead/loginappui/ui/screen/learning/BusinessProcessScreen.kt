@@ -74,7 +74,7 @@ fun TopAppBarComposeBusinessProcess() {
         ),
         title = {
             Text(
-                text = "Бизнес-процессоы в BPMN",
+                text = "Бизнес-процессы в BPMN",
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(end = 15.dp),

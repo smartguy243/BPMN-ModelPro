@@ -122,7 +122,7 @@ fun LearnScreen(onOpenMenuClicked: () -> Unit,
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Image(
-                            painter = painterResource(id = R.drawable.opened_book3),
+                            painter = painterResource(id = R.drawable.opened_book2),
                             contentDescription = "Builder",
                             modifier = Modifier.size(55.dp)
                                 .padding(start = 20.dp, top = 3.dp)
@@ -220,7 +220,7 @@ fun LearnScreen(onOpenMenuClicked: () -> Unit,
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Image(
-                            painter = painterResource(id = R.drawable.opened_book3),
+                            painter = painterResource(id = R.drawable.opened_book2),
                             contentDescription = "Builder",
                             modifier = Modifier.size(55.dp)
                                 .padding(start = 20.dp, top = 3.dp)
@@ -318,7 +318,7 @@ fun LearnScreen(onOpenMenuClicked: () -> Unit,
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Image(
-                            painter = painterResource(id = R.drawable.opened_book3),
+                            painter = painterResource(id = R.drawable.opened_book2),
                             contentDescription = "Builder",
                             modifier = Modifier.size(55.dp)
                                 .padding(start = 20.dp, top = 3.dp)
@@ -416,7 +416,7 @@ fun LearnScreen(onOpenMenuClicked: () -> Unit,
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Image(
-                            painter = painterResource(id = R.drawable.opened_book3),
+                            painter = painterResource(id = R.drawable.opened_book2),
                             contentDescription = "Builder",
                             modifier = Modifier.size(55.dp)
                                 .padding(start = 20.dp, top = 3.dp)
@@ -425,7 +425,7 @@ fun LearnScreen(onOpenMenuClicked: () -> Unit,
                         Spacer(modifier = Modifier.width(15.dp))
 
                         Text(
-                            text = "Бизнес-процессоы в BPMN",
+                            text = "Бизнес-процессы в BPMN",
                             modifier = Modifier.fillMaxWidth(),
                             fontSize = 16.sp,
                             fontWeight = FontWeight.W500,
@@ -484,10 +484,6 @@ fun LearnScreen(onOpenMenuClicked: () -> Unit,
                     }
                 }
             }
-            Spacer(
-                modifier = Modifier
-                    .padding(bottom = 7.dp)
-            )
         }
     }
 }
