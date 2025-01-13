@@ -49,12 +49,8 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.androidlead.loginappui.R
-import com.androidlead.loginappui.ui.theme.CharcoalGray
 import com.androidlead.loginappui.ui.theme.DarkTextColor
 import com.androidlead.loginappui.ui.theme.LightGray
-import com.androidlead.loginappui.ui.theme.MintCream
-import com.androidlead.loginappui.ui.theme.SoftRed
-import com.androidlead.loginappui.ui.theme.SteelBlue
 import kotlinx.coroutines.launch
 
 @Composable
@@ -86,8 +82,8 @@ fun AuthenticationScreenTemplate(
         modifier = modifier
             .fillMaxSize()
             .background(Brush.verticalGradient(*backgroundGradient))
-            .systemBarsPadding()
-            .verticalScroll(scrollState)
+            //.systemBarsPadding()
+            //.verticalScroll(scrollState)
             .imePadding(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -95,8 +91,8 @@ fun AuthenticationScreenTemplate(
             painter = painterResource(imgRes),
             contentDescription = null,
             modifier = Modifier
-                .size(300.dp)
-                .padding(start = 30.dp)
+                .size(320.dp)
+                //.padding(start = 15.dp)
         )
         Message(
             title = title,
