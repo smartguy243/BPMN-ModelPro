@@ -2,9 +2,12 @@ package com.androidlead.loginappui.ui.screen.builder
 
 import android.content.Intent
 import android.net.Uri
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.viewinterop.AndroidView
 
 @Composable
 fun BuilderScreen() {
@@ -17,7 +20,7 @@ fun BuilderScreen() {
 }
 
 //@Composable
-//fun BuilderScreen(onBuilderClicked: () -> Unit) {
+//fun BuilderScreen() {
 //
 //    AndroidView(
 //        factory = { context ->
@@ -31,7 +34,7 @@ fun BuilderScreen() {
 //            }
 //        },
 //        update = { webView ->
-//            webView.loadUrl("https://bpmn.io")
+//            webView.loadUrl("https://cdn.statically.io/gh/bpmn-io/bpmn-js-examples/main/starter/modeler.html")
 //        }
 //    )
 //}

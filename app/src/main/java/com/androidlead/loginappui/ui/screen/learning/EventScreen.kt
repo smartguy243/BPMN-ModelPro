@@ -95,7 +95,7 @@ fun BottomAppBarComposeEvent(onOpenMenuClicked: () -> Unit, onLearnClicked: () -
     ) {
         Spacer(modifier = Modifier.weight(weight = 1f))
         ActionButton(
-            text = "Go to Learn",
+            text = "Изучать BPMN",
             isNavigationArrowVisible = true,
             onClicked = onLearnClicked,
             colors = ButtonDefaults.buttonColors(
@@ -105,7 +105,7 @@ fun BottomAppBarComposeEvent(onOpenMenuClicked: () -> Unit, onLearnClicked: () -
             shadowColor = DarkTextColor,
             modifier = Modifier.padding(end = 15.dp)
                 .height(35.dp)
-                .width(145.dp)
+                .width(167.dp)
                 .shadow(
                     elevation = 24.dp,
                     shape = RoundedCornerShape(percent = 50)
@@ -113,7 +113,7 @@ fun BottomAppBarComposeEvent(onOpenMenuClicked: () -> Unit, onLearnClicked: () -
         )
         Spacer(modifier = Modifier.weight(weight = 1f))
         ActionButton(
-            text = "Go to Menu",
+            text = "Меню",
             isNavigationArrowVisible = true,
             onClicked = onOpenMenuClicked,
             colors = ButtonDefaults.buttonColors(
@@ -121,7 +121,7 @@ fun BottomAppBarComposeEvent(onOpenMenuClicked: () -> Unit, onLearnClicked: () -
                 contentColor = DarkTextColor
             ),
             shadowColor = DarkTextColor,
-            modifier = Modifier.padding(end = 15.dp)
+            modifier = Modifier.padding(end = 11.dp)
                 .height(35.dp)
                 .width(140.dp)
                 .shadow(

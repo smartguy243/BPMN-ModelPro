@@ -102,8 +102,8 @@ fun AuthenticationScreenTemplate(
             modifier = Modifier.height(8.dp)
         )
         InputField(
-            leadingIconRes = R.drawable.profil,
-            placeholderText = "Your email",
+            leadingIconRes = R.drawable.mail,
+            placeholderText = "Логин",
             modifier = Modifier.padding(horizontal = 24.dp)
         )
         Spacer(
@@ -111,7 +111,7 @@ fun AuthenticationScreenTemplate(
         )
         InputField(
             leadingIconRes = R.drawable.password2,
-            placeholderText = "Password",
+            placeholderText = "Пароль",
             visualTransformation = PasswordVisualTransformation(),
             modifier = Modifier.padding(horizontal = 24.dp)
         )
@@ -199,16 +199,7 @@ fun AuthenticationScreenTemplate2(
         )
         InputField(
             leadingIconRes = R.drawable.profil,
-            placeholderText = "First name",
-            modifier = Modifier.padding(horizontal = 24.dp)
-        )
-        Spacer(
-            modifier = Modifier.height(10.dp)
-        )
-        InputField(
-            leadingIconRes = R.drawable.password2,
-            placeholderText = "Last Name",
-            visualTransformation = PasswordVisualTransformation(),
+            placeholderText = "Имя",
             modifier = Modifier.padding(horizontal = 24.dp)
         )
         Spacer(
@@ -216,7 +207,16 @@ fun AuthenticationScreenTemplate2(
         )
         InputField(
             leadingIconRes = R.drawable.profil,
-            placeholderText = "Email",
+            placeholderText = "Фамилия",
+            visualTransformation = PasswordVisualTransformation(),
+            modifier = Modifier.padding(horizontal = 24.dp)
+        )
+        Spacer(
+            modifier = Modifier.height(10.dp)
+        )
+        InputField(
+            leadingIconRes = R.drawable.mail,
+            placeholderText = "Логин",
             modifier = Modifier.padding(horizontal = 24.dp)
         )
         Spacer(
@@ -224,7 +224,7 @@ fun AuthenticationScreenTemplate2(
         )
         InputField(
             leadingIconRes = R.drawable.password2,
-            placeholderText = "Password",
+            placeholderText = "Пароль",
             visualTransformation = PasswordVisualTransformation(),
             modifier = Modifier.padding(horizontal = 24.dp)
         )
@@ -348,7 +348,7 @@ private fun Separator(
             modifier = Modifier.weight(weight = 1f)
         )
         Text(
-            text = "Or",
+            text = "или",
             style = MaterialTheme.typography.labelMedium,
             color = DarkTextColor
         )

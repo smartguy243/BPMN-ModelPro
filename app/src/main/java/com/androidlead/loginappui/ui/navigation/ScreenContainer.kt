@@ -92,9 +92,6 @@ fun ScreenContainer() {
         }
         composable(NavGraph.Settings.route) {
             SettingsScreen(
-                onSettingsClicked = {
-                    navHost.navigate(NavGraph.Menu.route)
-                },
                 onBuilderClicked = {
                     navHost.navigate(NavGraph.Menu.route)
                 },

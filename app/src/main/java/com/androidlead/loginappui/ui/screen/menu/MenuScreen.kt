@@ -41,7 +41,6 @@ import com.androidlead.loginappui.ui.components.ActionButton
 import com.androidlead.loginappui.ui.components.LanguageOption
 import com.androidlead.loginappui.ui.theme.CharcoalGray
 import com.androidlead.loginappui.ui.theme.DarkTextColor
-import com.androidlead.loginappui.ui.theme.LightGray
 import com.androidlead.loginappui.ui.theme.LightLavender
 import com.androidlead.loginappui.ui.theme.MintCream
 import com.androidlead.loginappui.ui.theme.SoftBlue
@@ -78,7 +77,7 @@ fun MenuScreen(onHomeClicked: () -> Unit,
             Spacer(modifier = Modifier.width(240.dp))
 
             ActionButton(
-                text = "Logout",
+                text = "Выйти",
                 isNavigationArrowVisible = true,
                 onClicked = onLoginClicked,
                 colors = ButtonDefaults.buttonColors(
@@ -108,7 +107,7 @@ fun MenuScreen(onHomeClicked: () -> Unit,
         Spacer(modifier = Modifier.height(10.dp))
 
         Text(
-            text = "Design smarter processes from your pocket.",
+            text = "Создавайте интеллектуальные процессы\nпрямо со своего телефона.",
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Center,
             color = CharcoalGray
@@ -145,10 +144,10 @@ fun MenuScreen(onHomeClicked: () -> Unit,
                             .padding(top = 15.dp)
                     )
 
-                    Spacer(modifier = Modifier.height(19.dp))
+                    Spacer(modifier = Modifier.height(5.dp))
 
                     Text(
-                        text = "Build Model",
+                        text = "Построить модель",
                         modifier = Modifier.fillMaxWidth(),
                         fontSize = 14.sp,
                         textAlign = TextAlign.Center
@@ -177,14 +176,14 @@ fun MenuScreen(onHomeClicked: () -> Unit,
                     Image(
                         painter = painterResource(id = R.drawable.loupe),
                         contentDescription = "Search",
-                        modifier = Modifier.size(50.dp)
-                            .padding(top = 15.dp)
+                        modifier = Modifier.size(45.dp)
+                            .padding(top = 10.dp)
                     )
 
-                    Spacer(modifier = Modifier.height(30.dp))
+                    Spacer(modifier = Modifier.height(15.dp))
 
                     Text(
-                        text = "Search",
+                        text = "Поиск",
                         modifier = Modifier.fillMaxWidth(),
                         fontSize = 14.sp,
                         textAlign = TextAlign.Center
@@ -216,10 +215,10 @@ fun MenuScreen(onHomeClicked: () -> Unit,
                             .padding(top = 15.dp)
                     )
 
-                    Spacer(modifier = Modifier.height(30.dp))
+                    Spacer(modifier = Modifier.height(18.dp))
 
                     Text(
-                        text = "Edit Model",
+                        text = "Редактировать модель",
                         modifier = Modifier.fillMaxWidth(),
                         fontSize = 14.sp,
                         textAlign = TextAlign.Center
@@ -261,10 +260,10 @@ fun MenuScreen(onHomeClicked: () -> Unit,
                             .padding(top = 15.dp)
                     )
 
-                    Spacer(modifier = Modifier.height(25.dp))
+                    Spacer(modifier = Modifier.height(12.dp))
 
                     Text(
-                        text = "View Model",
+                        text = "Просмотр модели",
                         modifier = Modifier.fillMaxWidth(),
                         fontSize = 14.sp,
                         textAlign = TextAlign.Center
@@ -292,14 +291,14 @@ fun MenuScreen(onHomeClicked: () -> Unit,
                     Image(
                         painter = painterResource(id = R.drawable.settings),
                         contentDescription = "Favorites",
-                        modifier = Modifier.size(50.dp)
-                            .padding(top = 15.dp)
+                        modifier = Modifier.size(45.dp)
+                            .padding(top = 6.dp)
                     )
 
-                    Spacer(modifier = Modifier.height(30.dp))
+                    Spacer(modifier = Modifier.height(20.dp))
 
                     Text(
-                        text = "Settings",
+                        text = "Настройки",
                         modifier = Modifier.fillMaxWidth(),
                         fontSize = 14.sp,
                         textAlign = TextAlign.Center
@@ -332,10 +331,10 @@ fun MenuScreen(onHomeClicked: () -> Unit,
                             .padding(top = 10.dp)
                     )
 
-                    Spacer(modifier = Modifier.height(25.dp))
+                    Spacer(modifier = Modifier.height(12.dp))
 
                     Text(
-                        text = "Learn BPMN",
+                        text = "Изучать BPMN",
                         modifier = Modifier.fillMaxWidth(),
                         fontSize = 14.sp,
                         textAlign = TextAlign.Center
@@ -344,10 +343,10 @@ fun MenuScreen(onHomeClicked: () -> Unit,
             }
         }
 
-        Spacer(modifier = Modifier.height(195.dp))
+        Spacer(modifier = Modifier.height(165.dp))
 
         Text(
-            text = "Actual App version  v1.2.0",
+            text = "Текующая версия приложения v1.0.0",
             modifier = Modifier.fillMaxWidth(),
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
@@ -381,7 +380,7 @@ fun MenuScreen(onHomeClicked: () -> Unit,
             if (showDialog) {
                 AlertDialog(
                     onDismissRequest = { showDialog = false },
-                    title = { Text("Choisissez une langue") },
+                    title = { Text("Выберите язык") },
                     text = {
                         Column {
                             LanguageOption("Русский", selectedLanguage) {

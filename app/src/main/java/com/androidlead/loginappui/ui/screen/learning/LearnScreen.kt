@@ -544,7 +544,7 @@ fun LearnScreen(onOpenMenuClicked: () -> Unit,
                     if (showDialog) {
                         AlertDialog(
                             onDismissRequest = { showDialog = false },
-                            title = { Text("Choisissez une langue") },
+                            title = { Text("Выберите язык") },
                             text = {
                                 Column {
                                     LanguageOption("Русский", selectedLanguage) {
@@ -598,7 +598,7 @@ fun LearnScreen(onOpenMenuClicked: () -> Unit,
                     }
                     Spacer(modifier = Modifier.weight(weight = 2f))
                     ActionButton(
-                        text = "Go to Menu",
+                        text = "Меню",
                         isNavigationArrowVisible = true,
                         onClicked = onOpenMenuClicked,
                         colors = ButtonDefaults.buttonColors(

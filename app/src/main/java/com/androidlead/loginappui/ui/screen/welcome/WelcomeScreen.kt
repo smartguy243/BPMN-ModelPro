@@ -74,7 +74,7 @@ fun WelcomeScreen(
             modifier = Modifier.height(16.dp)
         )
         Text(
-            text = "Your mobile companion for excellence.\nBPMN modeling, anytime, anywhere.",
+            text = "Ваш мобильный компаньон.\nМоделирование BPMN в любое время и в любом месте.",
             modifier = Modifier.padding(horizontal = 24.dp),
             textAlign = TextAlign.Center,
             style = MaterialTheme.typography.bodyLarge,
@@ -84,7 +84,7 @@ fun WelcomeScreen(
             modifier = Modifier.weight(weight = 1f)
         )
         ActionButton(
-            text = "Start",
+            text = "Начать",
             isNavigationArrowVisible = true,
             onClicked = onOpenLoginClicked,
             colors = ButtonDefaults.buttonColors(

@@ -65,8 +65,7 @@ import com.androidlead.loginappui.ui.theme.SteelBlue
 import com.androidlead.loginappui.ui.theme.WarmBeige
 
 @Composable
-fun SettingsScreen(onSettingsClicked: () -> Unit,
-                   onBuilderClicked: () -> Unit,
+fun SettingsScreen(onBuilderClicked: () -> Unit,
                    onLoginClicked: () -> Unit) {
     Scaffold(topBar = { TopAppBarCompose() },
         bottomBar = {
@@ -210,88 +209,88 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                         .fillMaxWidth()
                         .padding(start = 20.dp, end = 20.dp, bottom = 9.dp)
                 ) {
-                    Row(
-                        modifier = Modifier
-                            .padding(top = 8.dp, end = 5.dp),
-                        horizontalArrangement = Arrangement.SpaceBetween
-                    ) {
-
-                        Card(
-                            elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
-                            colors = CardDefaults.cardColors(Color.White),
-                            shape = RoundedCornerShape(4.dp)
-                        ) {
-                            Image(
-                                painter = painterResource(id = R.drawable.star),
-                                contentDescription = "star",
-                                modifier = Modifier
-                                    .background(Color.Black.copy(alpha = 0.7f))
-                            )
-                        }
-                        Text(
-                            text = "Messages importants",
-                            modifier = Modifier
-                                .padding(start = 15.dp),
-                            color = DarkTextColor
-                        )
-
-                        Image(
-                            painter = painterResource(id = R.drawable.arrow),
-                            contentDescription = "arrow",
-                            colorFilter = ColorFilter.tint(Color.Gray.copy(alpha = 0.7f)),
-                            modifier = Modifier
-                                .padding(top = 6.dp, start = 56.dp)
-                        )
-
-                    }
-
-                    Spacer(
-                        modifier = Modifier
-                            .padding(bottom = 10.dp)
-                    )
-
-                    HorizontalDivider(thickness = 1.dp)
-
-                    Row(
-                        modifier = Modifier
-                            .padding(top = 8.dp, end = 5.dp),
-                        horizontalArrangement = Arrangement.SpaceBetween
-                    ) {
-
-                        Card(
-                            elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
-                            colors = CardDefaults.cardColors(Color.White),
-                            shape = RoundedCornerShape(4.dp)
-                        ) {
-                            Image(
-                                painter = painterResource(id = R.drawable.computer),
-                                contentDescription = "computer",
-                                modifier = Modifier
-                                    .background(Color.Black.copy(alpha = 0.7f))
-                            )
-                        }
-                        Text(
-                            text = "Appareils connectés",
-                            modifier = Modifier
-                                .padding(start = 15.dp),
-                            color = DarkTextColor
-                        )
-
-                        Image(
-                            painter = painterResource(id = R.drawable.arrow),
-                            contentDescription = "arrow",
-                            colorFilter = ColorFilter.tint(Color.Gray.copy(alpha = 0.7f)),
-                            modifier = Modifier
-                                .padding(top = 6.dp, start = 65.dp)
-                        )
-
-                    }
-                    Spacer(
-                        modifier = Modifier
-                            .padding(bottom = 10.dp)
-                    )
-
-                    HorizontalDivider(thickness = 1.dp)
+//                    Row(
+//                        modifier = Modifier
+//                            .padding(top = 8.dp, end = 5.dp),
+//                        horizontalArrangement = Arrangement.SpaceBetween
+//                    ) {
+//
+//                        Card(
+//                            elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
+//                            colors = CardDefaults.cardColors(Color.White),
+//                            shape = RoundedCornerShape(4.dp)
+//                        ) {
+//                            Image(
+//                                painter = painterResource(id = R.drawable.star),
+//                                contentDescription = "star",
+//                                modifier = Modifier
+//                                    .background(Color.Black.copy(alpha = 0.7f))
+//                            )
+//                        }
+//                        Text(
+//                            text = "Messages importants",
+//                            modifier = Modifier
+//                                .padding(start = 15.dp),
+//                            color = DarkTextColor
+//                        )
+//
+//                        Image(
+//                            painter = painterResource(id = R.drawable.arrow),
+//                            contentDescription = "arrow",
+//                            colorFilter = ColorFilter.tint(Color.Gray.copy(alpha = 0.7f)),
+//                            modifier = Modifier
+//                                .padding(top = 6.dp, start = 56.dp)
+//                        )
+//
+//                    }
+//
+//                    Spacer(
+//                        modifier = Modifier
+//                            .padding(bottom = 10.dp)
+//                    )
+//
+//                    HorizontalDivider(thickness = 1.dp)
+//
+//                    Row(
+//                        modifier = Modifier
+//                            .padding(top = 8.dp, end = 5.dp),
+//                        horizontalArrangement = Arrangement.SpaceBetween
+//                    ) {
+//
+//                        Card(
+//                            elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
+//                            colors = CardDefaults.cardColors(Color.White),
+//                            shape = RoundedCornerShape(4.dp)
+//                        ) {
+//                            Image(
+//                                painter = painterResource(id = R.drawable.computer),
+//                                contentDescription = "computer",
+//                                modifier = Modifier
+//                                    .background(Color.Black.copy(alpha = 0.7f))
+//                            )
+//                        }
+//                        Text(
+//                            text = "Appareils connectés",
+//                            modifier = Modifier
+//                                .padding(start = 15.dp),
+//                            color = DarkTextColor
+//                        )
+//
+//                        Image(
+//                            painter = painterResource(id = R.drawable.arrow),
+//                            contentDescription = "arrow",
+//                            colorFilter = ColorFilter.tint(Color.Gray.copy(alpha = 0.7f)),
+//                            modifier = Modifier
+//                                .padding(top = 6.dp, start = 65.dp)
+//                        )
+//
+//                    }
+//                    Spacer(
+//                        modifier = Modifier
+//                            .padding(bottom = 10.dp)
+//                    )
+//
+//                    HorizontalDivider(thickness = 1.dp)
 
                     Row(
                         modifier = Modifier
@@ -313,7 +312,7 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                             )
                         }
                         Text(
-                            text = "Compte",
+                            text = "Контроль доступа",
                             modifier = Modifier
                                 .padding(start = 15.dp),
                             color = DarkTextColor
@@ -324,7 +323,7 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                             contentDescription = "arrow",
                             colorFilter = ColorFilter.tint(Color.Gray.copy(alpha = 0.7f)),
                             modifier = Modifier
-                                .padding(top = 6.dp, start = 161.dp)
+                                .padding(top = 6.dp, start = 76.dp)
                         )
 
 
@@ -356,7 +355,7 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                             )
                         }
                         Text(
-                            text = "Confidentialité",
+                            text = "Конфиденциальность",
                             modifier = Modifier
                                 .padding(start = 15.dp),
                             color = DarkTextColor
@@ -367,7 +366,7 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                             contentDescription = "arrow",
                             colorFilter = ColorFilter.tint(Color.Gray.copy(alpha = 0.7f)),
                             modifier = Modifier
-                                .padding(top = 6.dp, start = 108.dp)
+                                .padding(top = 6.dp, start = 46.dp)
                         )
                     }
 
@@ -391,13 +390,13 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                         ) {
                             Image(
                                 painter = painterResource(id = R.drawable.discussions),
-                                contentDescription = "discussions",
+                                contentDescription = "Уведомления",
                                 modifier = Modifier
                                     .background(Color.Black.copy(alpha = 0.7f))
                             )
                         }
                         Text(
-                            text = "Discussions",
+                            text = "Уведомления",
                             modifier = Modifier
                                 .padding(start = 15.dp),
                             color = DarkTextColor
@@ -408,7 +407,7 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                             contentDescription = "arrow",
                             colorFilter = ColorFilter.tint(Color.Gray.copy(alpha = 0.7f)),
                             modifier = Modifier
-                                .padding(top = 6.dp, start = 125.dp)
+                                .padding(top = 6.dp, start = 110.dp)
                         )
                     }
 
@@ -432,13 +431,13 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                         ) {
                             Image(
                                 painter = painterResource(id = R.drawable.notifications),
-                                contentDescription = "notificqtions",
+                                contentDescription = "Доступность",
                                 modifier = Modifier
                                     .background(Color.Black.copy(alpha = 0.7f))
                             )
                         }
                         Text(
-                            text = "Notificqtions",
+                            text = "Доступность",
                             modifier = Modifier
                                 .padding(start = 15.dp),
                             color = DarkTextColor
@@ -449,7 +448,7 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                             contentDescription = "arrow",
                             colorFilter = ColorFilter.tint(Color.Gray.copy(alpha = 0.7f)),
                             modifier = Modifier
-                                .padding(top = 6.dp, start = 121.dp)
+                                .padding(top = 6.dp, start = 117.dp)
                         )
                     }
 
@@ -469,17 +468,20 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                         Card(
                             elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
                             colors = CardDefaults.cardColors(Color.White),
-                            shape = RoundedCornerShape(4.dp)
+                            shape = RoundedCornerShape(4.dp),
+                            modifier = Modifier
+                                .padding(top = 12.dp)
                         ) {
                             Image(
-                                painter = painterResource(id = R.drawable.stockage),
+                                painter = painterResource(id = R.drawable.copy),
                                 contentDescription = "stockage",
                                 modifier = Modifier
+                                    .size(25.dp)
                                     .background(Color.Black.copy(alpha = 0.7f))
                             )
                         }
                         Text(
-                            text = "Stockage et données",
+                            text = "Резервное копирование\nи синхронизация",
                             modifier = Modifier
                                 .padding(start = 15.dp),
                             color = DarkTextColor
@@ -490,7 +492,7 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                             contentDescription = "arrow",
                             colorFilter = ColorFilter.tint(Color.Gray.copy(alpha = 0.7f)),
                             modifier = Modifier
-                                .padding(top = 6.dp, start = 61.dp)
+                                .padding(top = 6.dp, start = 27.dp)
                         )
                     }
                 }
@@ -534,7 +536,7 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                             )
                         }
                         Text(
-                            text = "Aide",
+                            text = "Поддержка",
                             modifier = Modifier
                                 .padding(start = 15.dp),
                             color = DarkTextColor
@@ -545,7 +547,7 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                             contentDescription = "arrow",
                             colorFilter = ColorFilter.tint(Color.Gray.copy(alpha = 0.7f)),
                             modifier = Modifier
-                                .padding(top = 6.dp, start = 185.dp)
+                                .padding(top = 6.dp, start = 128.dp)
                         )
 
                     }
@@ -568,14 +570,13 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                             shape = RoundedCornerShape(4.dp)
                         ) {
                             Image(
-                                painter = painterResource(id = R.drawable.heart),
+                                painter = painterResource(id = R.drawable.stockage),
                                 contentDescription = "inviter",
                                 modifier = Modifier
                                     .background(Color.Black.copy(alpha = 0.7f))
-                            )
-                        }
+                            )                        }
                         Text(
-                            text = "Inviter un contact",
+                            text = "Обновление",
                             modifier = Modifier
                                 .padding(start = 15.dp),
                             color = DarkTextColor
@@ -586,7 +587,7 @@ fun SettingsScreen(onSettingsClicked: () -> Unit,
                             contentDescription = "arrow",
                             colorFilter = ColorFilter.tint(Color.Gray.copy(alpha = 0.7f)),
                             modifier = Modifier
-                                .padding(top = 6.dp, start = 86.dp)
+                                .padding(top = 6.dp, start = 122.dp)
                         )
 
                     }
@@ -632,7 +633,7 @@ fun BottomAppBarCompose(onBuilderClicked: () -> Unit, onLoginClicked: () -> Unit
     ) {
         Spacer(modifier = Modifier.weight(weight = 1f))
         ActionButton(
-            text = "Go to Menu",
+            text = "Меню",
             isNavigationArrowVisible = true,
             onClicked = onBuilderClicked,
             colors = ButtonDefaults.buttonColors(
@@ -650,7 +651,7 @@ fun BottomAppBarCompose(onBuilderClicked: () -> Unit, onLoginClicked: () -> Unit
         )
         Spacer(modifier = Modifier.weight(weight = 1f))
         ActionButton(
-            text = "Logout",
+            text = "Выйти",
             isNavigationArrowVisible = true,
             onClicked = onLoginClicked,
             colors = ButtonDefaults.buttonColors(

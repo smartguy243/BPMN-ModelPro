@@ -98,7 +98,7 @@ fun SearchScreen(
 
     Scaffold(
         topBar = { TopAppBarCompose() },
-        bottomBar = { BottomAppBarCompose(onOpenMenuClicked, onSettingsClicked) }
+        bottomBar = { BottomAppBarCompose(onOpenMenuClicked) }
     ) { innerPadding ->
         // Zone cliquable pour fermer le clavier
         Box(
@@ -272,7 +272,7 @@ fun TopAppBarCompose() {
 
 
 @Composable
-fun BottomAppBarCompose(onOpenMenuClicked: () -> Unit, onSettingsClicked: () -> Unit) {
+fun BottomAppBarCompose(onOpenMenuClicked: () -> Unit) {
     BottomAppBar(
         containerColor = SoftBlue,
         contentColor = Color.Black.copy(alpha = 0.1f)
@@ -298,11 +298,10 @@ fun BottomAppBarCompose(onOpenMenuClicked: () -> Unit, onSettingsClicked: () -> 
             )
         }
 
-        // Dialog for language selection
         if (showDialog) {
             AlertDialog(
                 onDismissRequest = { showDialog = false },
-                title = { Text("Choisissez une langue") },
+                title = { Text("Выберите язык") },
                 text = {
                     Column {
                         LanguageOption("Русский", selectedLanguage) {
@@ -356,7 +355,7 @@ fun BottomAppBarCompose(onOpenMenuClicked: () -> Unit, onSettingsClicked: () -> 
         }
         Spacer(modifier = Modifier.weight(weight = 2f))
         ActionButton(
-            text = "Go to Menu",
+            text = "Меню",
             isNavigationArrowVisible = true,
             onClicked = onOpenMenuClicked,
             colors = ButtonDefaults.buttonColors(
