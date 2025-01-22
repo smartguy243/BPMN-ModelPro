@@ -3,7 +3,7 @@ package com.androidlead.loginappui.ui.screen.registration
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.androidlead.loginappui.ui.components.AuthenticationScreenTemplate2
+import com.androidlead.loginappui.components.AuthenticationScreenTemplate2
 import com.androidlead.loginappui.ui.theme.DarkTextColor
 import com.androidlead.loginappui.ui.theme.LightLavender
 import com.androidlead.loginappui.ui.theme.MintCream

@@ -1,4 +1,4 @@
-package com.androidlead.loginappui.ui.components
+package com.androidlead.loginappui.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row

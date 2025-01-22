@@ -1,4 +1,4 @@
-package com.androidlead.loginappui.ui.components
+package com.androidlead.loginappui.components
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Canvas
@@ -208,7 +208,6 @@ fun AuthenticationScreenTemplate2(
         InputField(
             leadingIconRes = R.drawable.profil,
             placeholderText = "Фамилия",
-            visualTransformation = PasswordVisualTransformation(),
             modifier = Modifier.padding(horizontal = 24.dp)
         )
         Spacer(

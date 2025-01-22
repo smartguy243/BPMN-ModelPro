@@ -38,7 +38,3 @@ fun BuilderScreen() {
 //        }
 //    )
 //}
-
-
-//https://www.bpmn-sketch-miner.ai/index.html
-//https://products.aspose.app/diagram/bpmn

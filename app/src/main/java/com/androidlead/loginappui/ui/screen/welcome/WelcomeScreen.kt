@@ -22,18 +22,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.androidlead.loginappui.R
-import com.androidlead.loginappui.ui.components.ActionButton
-import com.androidlead.loginappui.ui.theme.CoralPink
+import com.androidlead.loginappui.components.ActionButton
 import com.androidlead.loginappui.ui.theme.DarkTextColor
 import com.androidlead.loginappui.ui.theme.LightLavender
 import com.androidlead.loginappui.ui.theme.MintCream
-import com.androidlead.loginappui.ui.theme.PrimaryPinkBlended
-import com.androidlead.loginappui.ui.theme.PrimaryYellow
-import com.androidlead.loginappui.ui.theme.PrimaryYellowDark
-import com.androidlead.loginappui.ui.theme.PrimaryYellowLight
 import com.androidlead.loginappui.ui.theme.SoftBlue
-import com.androidlead.loginappui.ui.theme.SteelBlue
-import com.androidlead.loginappui.ui.theme.WarmBeige
 
 @Composable
 fun WelcomeScreen(

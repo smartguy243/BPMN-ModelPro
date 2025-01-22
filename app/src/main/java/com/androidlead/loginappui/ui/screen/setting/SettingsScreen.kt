@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.layout.width
@@ -21,11 +20,9 @@ import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SearchBarDefaults.InputField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarColors
@@ -45,24 +42,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.androidlead.loginappui.R
-import com.androidlead.loginappui.ui.components.ActionButton
-import com.androidlead.loginappui.ui.components.InputField
+import com.androidlead.loginappui.components.ActionButton
+import com.androidlead.loginappui.components.InputField
 import com.androidlead.loginappui.ui.theme.DarkTextColor
 import com.androidlead.loginappui.ui.theme.Lavender
 import com.androidlead.loginappui.ui.theme.LightGray
 import com.androidlead.loginappui.ui.theme.LightLavender
 import com.androidlead.loginappui.ui.theme.MintCream
-import com.androidlead.loginappui.ui.theme.Peach
-import com.androidlead.loginappui.ui.theme.PrimaryPinkBlended
-import com.androidlead.loginappui.ui.theme.PrimaryYellow
-import com.androidlead.loginappui.ui.theme.PrimaryYellowDark
-import com.androidlead.loginappui.ui.theme.PrimaryYellowLight
-import com.androidlead.loginappui.ui.theme.Purple80
-import com.androidlead.loginappui.ui.theme.PurpleGrey80
-import com.androidlead.loginappui.ui.theme.RichTeal
 import com.androidlead.loginappui.ui.theme.SoftBlue
-import com.androidlead.loginappui.ui.theme.SteelBlue
-import com.androidlead.loginappui.ui.theme.WarmBeige
 
 @Composable
 fun SettingsScreen(onBuilderClicked: () -> Unit,

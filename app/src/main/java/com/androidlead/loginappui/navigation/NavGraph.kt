@@ -1,4 +1,4 @@
-package com.androidlead.loginappui.ui.navigation
+package com.androidlead.loginappui.navigation
 
 sealed class NavGraph(val route: String) {
     data object Welcome: NavGraph(route = "welcome_screen")

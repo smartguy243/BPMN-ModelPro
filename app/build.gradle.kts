@@ -58,7 +58,6 @@ dependencies {
     implementation(libs.bundles.ui)
     implementation(libs.androidx.webkit)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
-
     implementation(libs.androidx.lifecycle.runtime.ktx.v287)
     implementation(libs.androidx.activity.compose.v193)
     implementation(platform(libs.androidx.compose.bom.v20241201))
@@ -75,17 +74,11 @@ dependencies {
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
-
     implementation(platform(libs.firebase.bom))
-
     implementation(libs.firebase.auth.ktx)
-
     // Import the Firebase BoM
     implementation(platform(libs.firebase.bom))
-
-
     implementation(libs.firebase.analytics)
-
     implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)
 }

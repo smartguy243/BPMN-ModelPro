@@ -18,12 +18,12 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.androidlead.loginappui.ui.components.ActionButton
+import com.androidlead.loginappui.components.ActionButton
 import com.androidlead.loginappui.ui.theme.PrimaryGreen
 import com.androidlead.loginappui.ui.theme.PrimaryGreenDark
 import com.androidlead.loginappui.ui.theme.PrimaryPinkDark
 import com.androidlead.loginappui.ui.theme.PrimaryViolet
-import com.androidlead.loginappui.ui.util.KonfettiUtil
+import com.androidlead.loginappui.util.KonfettiUtil
 import nl.dionsegijn.konfetti.compose.KonfettiView
 
 @Composable

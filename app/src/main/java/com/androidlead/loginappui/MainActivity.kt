@@ -6,8 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.androidlead.loginappui.ui.navigation.ScreenContainer
-import com.androidlead.loginappui.ui.screen.learning.LearnScreen
+import com.androidlead.loginappui.navigation.ScreenContainer
 import com.androidlead.loginappui.ui.theme.LoginAppUiTheme
 
 class MainActivity : ComponentActivity() {
@@ -23,8 +22,8 @@ class MainActivity : ComponentActivity() {
 }
 @Preview(showBackground = true)
 @Composable
-fun PreviewLearnScreen() {
-    LoginAppUiTheme { // Assurez-vous d'utiliser le même thème que dans votre activité
+fun PreviewScreen() {
+    LoginAppUiTheme {
         ScreenContainer()
     }
 }

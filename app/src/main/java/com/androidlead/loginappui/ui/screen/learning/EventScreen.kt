@@ -25,7 +25,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
-import com.androidlead.loginappui.ui.components.ActionButton
+import com.androidlead.loginappui.components.ActionButton
 import com.androidlead.loginappui.ui.theme.DarkTextColor
 import com.androidlead.loginappui.ui.theme.Lavender
 import com.androidlead.loginappui.ui.theme.LightGray

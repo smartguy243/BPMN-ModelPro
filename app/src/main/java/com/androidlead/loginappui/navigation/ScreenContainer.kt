@@ -1,4 +1,4 @@
-package com.androidlead.loginappui.ui.navigation
+package com.androidlead.loginappui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
